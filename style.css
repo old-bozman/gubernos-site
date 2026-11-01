@@ -21,6 +21,14 @@ p, li { color: var(--ink); }
 a { color: var(--accent); }
 ul { padding-left: 22px; }
 li { margin: 6px 0; overflow-wrap: anywhere; }
+.shots { margin: 40px 0 0; }
+.shots figure { margin: 0; }
+.shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 20px; }
+.shots figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+.phones { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.shots .mac { margin-top: 28px; }
+.shots .mac img { border-radius: 12px; }
+@media (max-width: 820px) { .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
 .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 48px; }
 .cols h2 { margin-top: 0; }
 @media (max-width: 820px) { .cols { grid-template-columns: minmax(0, 1fr); gap: 0; } .cols h2 { margin-top: 36px; } }

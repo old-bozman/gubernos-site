@@ -52,14 +52,18 @@
 
 <section>
 <h2 id="install">Install the beta</h2>
-<p>Gubernos is in beta: the iPhone and Apple Watch app is on TestFlight, the Mac app installs from <a href="https://github.com/old-bozman/gubernos">GitHub</a>. Things change quickly, and your files stay yours whatever happens: plain Markdown in your own iCloud.</p>
+<p><strong>You don’t have to do the setup yourself: your AI agent does it.</strong> On your Mac, open Claude Code, Codex or Gemini CLI, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
+<pre class="prompt"><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre>
+<p class="muted">One click selects the whole line.</p>
+<p>It checks the Mac, installs what’s missing (asking first), creates your folder in iCloud, starts the app, sets up the phone connection and then interviews you to fill the system. It asks you for what only you can do, such as signing in to Tailscale and these taps on your iPhone:</p>
 <ol>
-<li>On your iPhone, install <strong>TestFlight</strong> from the App Store.</li>
-<li>On the iPhone, open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>. Until Apple has reviewed the first beta build, the link may say the beta isn’t accepting testers yet.</li>
-<li>Open Gubernos → <strong>Start a new system</strong> → choose or create a folder in iCloud Drive (inside Obsidian’s folder works too). The app works on its own from here: tasks, habits, reminders, widgets, the watch.</li>
-<li>Optional, for AI agents, the chat, voice and planning with your calendar: Gubernos for Mac. In Terminal run the line below (<a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>).
-<pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre></li>
+<li>Install <strong>TestFlight</strong> from the App Store.</li>
+<li>Open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>.</li>
 </ol>
+<p><strong>No Mac?</strong> After those two steps, open Gubernos → <strong>Start a new system</strong> → choose or create a folder in iCloud Drive (inside Obsidian’s folder works too). The app works on its own: tasks, habits, reminders, widgets, the watch. Agents, the chat, voice and planning with your calendar need the Mac.</p>
+<p><strong>By hand?</strong> In Terminal run the line below, then follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>.</p>
+<pre class="prompt"><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre>
+<p>Gubernos is in beta and changes quickly. Your files stay yours whatever happens: plain Markdown in your own iCloud.</p>
 <p><strong>Feedback:</strong> in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>
 </section>
 </div>

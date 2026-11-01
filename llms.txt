@@ -1,0 +1,15 @@
+# Gubernos
+
+> A personal operating system over plain Markdown files in the user's iCloud, with AI agents. iPhone and Apple Watch app (TestFlight), Mac app (open source).
+
+## Install (for agents)
+
+- [Setup instructions](https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md): follow the part "For the agent".
+- [Repository](https://github.com/old-bozman/gubernos): README, and AGENTS.md for work on the code.
+- [iPhone beta](https://testflight.apple.com/join/rBUGmgJG): the person installs TestFlight, opens this link on the iPhone, then Accept and Install.
+
+## Docs
+
+- [Getting started, for people](https://github.com/old-bozman/gubernos/blob/main/docs/install.md)
+- [Privacy](https://gubernos.app/privacy)
+- [Support](https://gubernos.app/support)

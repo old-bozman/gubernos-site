@@ -20,7 +20,10 @@ p, li { color: var(--ink); }
 .muted { color: var(--muted); font-size: 15px; }
 a { color: var(--accent); }
 ul { padding-left: 22px; }
-li { margin: 6px 0; }
+li { margin: 6px 0; overflow-wrap: anywhere; }
+.beta { color: var(--muted); font-size: 15px; margin: -16px 0 24px; }
+pre { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+code { font: 14px/1.5 ui-monospace, "SF Mono", Menlo, monospace; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin: 20px 0; }
 .card p:first-child { margin-top: 0; } .card p:last-child { margin-bottom: 0; }
 table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 12px 0; }

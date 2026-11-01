@@ -6,6 +6,7 @@
   :root:not([data-theme="light"]) { --bg: #181614; --ink: #ece7e2; --muted: #a39b93; --line: #2e2a26; --accent: #ef6a5c; --card: #201d1a; }
 }
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
 main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
 header { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
@@ -41,3 +42,6 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line);
 .cpt-head h3 { margin: 0; font-size: 21px; line-height: 1.3; }
 .cpt-head p { margin: 0; color: var(--muted); font-size: 15.5px; }
 .cpt-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+/* on a phone: the loops' side labels may run into the card's padding, and the agent examples wrap instead of being cut */
+.concept .cpt-loop svg { overflow: visible; }
+.concept .cpt-term { white-space: pre-wrap; overflow-wrap: anywhere; }

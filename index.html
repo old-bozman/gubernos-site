@@ -11,25 +11,58 @@
 </head>
 <body>
 <main>
-<header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
+<header class="app">
+<img class="app-icon" src="icon-512.png" width="512" height="512" alt="">
+<div>
+<h1>Gubernos</h1>
+<p class="tagline">Steer your life, not your to&#8209;do app.</p>
+<p class="app-get"><a class="get" href="#install">Install the beta</a><span>iPhone · Apple Watch · Mac</span></p>
+</div>
+</header>
 
-<h1>Steer your life, not your to&#8209;do app.</h1>
-<p class="lead">Gubernos (from Latin <em>gubernare</em>, to steer) is a personal operating system: tasks, projects, goals, habits and your day, with AI agents that take part of the work off your hands.</p>
-<p class="beta"><strong>Beta.</strong> Things change quickly, and your files stay yours whatever happens. <a href="#install">Install the beta</a></p>
+<p class="lead">A personal operating system (from Latin <em>gubernare</em>, to steer): tasks, projects, goals, habits and your day, with AI agents that take part of the work off your hands.</p>
+<p class="beta"><strong>Beta.</strong> Things change quickly, and your files stay yours whatever happens.</p>
+
+<section class="gallery" tabindex="0" aria-label="Screens from the app. Scroll sideways for more.">
+<img src="shots/iphone-today.png" width="720" height="1564" alt="The Today screen: the day’s #1, an agent’s work to review, and today’s tasks, each linked to its goal.">
+<img src="shots/iphone-protocol.png" width="720" height="1564" alt="The Protocol screen: morning and day habits with streaks, some ticked off from Apple Health.">
+<img src="shots/iphone-inbox.png" width="720" height="1564" alt="The Inbox screen: a voice note and a clipped link, each with an agent’s proposal of what it is.">
+<img src="shots/iphone-agents.png" width="720" height="1564" alt="The Agents screen: one task waiting for review and one in the queue.">
+<img src="shots/iphone-wins.png" width="720" height="1564" alt="The Wins screen: this week’s three results and the quarter’s focus.">
+<img class="watch" src="shots/watch-protocol.png" width="416" height="496" alt="The Apple Watch app: today’s habits, with one ticked off.">
+<img class="mac" src="shots/mac-protocol.png" width="1960" height="1225" alt="Gubernos for Mac: the Protocol screen in a wide layout with a sidebar.">
+</section>
+<p class="gallery-note">Screens from a demo system.</p>
 
 <div class="card">
 <p><strong>Yours, all the way down.</strong> Everything is plain Markdown files in your own iCloud folder. Your Mac is the “server”. Agents run on your own Claude, ChatGPT or Gemini plan. No account with us, no cloud of ours, no tracking.</p>
 </div>
 
-<section class="shots" aria-label="Screens from the app">
-<div class="phones">
-<figure><img src="shots/iphone-today.png" width="720" height="1564" loading="lazy" alt="The Today screen: the day’s #1, an agent’s work to review, and today’s tasks, each linked to its goal."><figcaption><strong>Today.</strong> The one result that makes the day a win, and why each task matters.</figcaption></figure>
-<figure><img src="shots/iphone-protocol.png" width="720" height="1564" loading="lazy" alt="The Protocol screen: morning and day habits with streaks, some ticked off from Apple Health."><figcaption><strong>Protocol.</strong> Habits that frame the day, ticked off from Apple Health where they can be.</figcaption></figure>
-<figure><img src="shots/iphone-inbox.png" width="720" height="1564" loading="lazy" alt="The Inbox screen: a voice note and a clipped link, each with an agent’s proposal of what it is."><figcaption><strong>Inbox.</strong> An agent says what each capture is. You decide with one tap.</figcaption></figure>
-<figure><img src="shots/iphone-agents.png" width="720" height="1564" loading="lazy" alt="The Agents screen: one task waiting for review and one in the queue."><figcaption><strong>Agents.</strong> Work comes back for your review: accept it or send it back.</figcaption></figure>
-</div>
-<figure class="mac"><img src="shots/mac-protocol.png" width="1960" height="1225" loading="lazy" alt="Gubernos for Mac showing the same Protocol screen in a wide layout with a sidebar."><figcaption><strong>Gubernos for Mac.</strong> The same system on a bigger screen, with agents, the chat and planning. Screens from a demo system.</figcaption></figure>
+<div class="cols">
+<section>
+<h2>What it does</h2>
+<ul>
+<li><strong>Capture anything:</strong> type, dictate, share from any app, or speak to your Apple Watch. The inbox agent says what each item is.</li>
+<li><strong>Plan the day</strong> around your calendar, with the one thing that matters most first.</li>
+<li><strong>Hand tasks to agents:</strong> research, drafts, follow-ups. They report back for your review.</li>
+<li><strong>Habits and protocols</strong> for your mornings and evenings, ticked off from Apple Health where it can.</li>
+<li><strong>Weekly review</strong> and a model of what you’re responsible for, committed to and want.</li>
+</ul>
 </section>
+
+<section>
+<h2 id="install">Install the beta</h2>
+<p>Gubernos is in beta: the iPhone and Apple Watch app is on TestFlight, the Mac app installs from <a href="https://github.com/old-bozman/gubernos">GitHub</a>. Things change quickly, and your files stay yours whatever happens: plain Markdown in your own iCloud.</p>
+<ol>
+<li>On your iPhone, install <strong>TestFlight</strong> from the App Store.</li>
+<li>On the iPhone, open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>. Until Apple has reviewed the first beta build, the link may say the beta isn’t accepting testers yet.</li>
+<li>Open Gubernos → <strong>Start a new system</strong> → choose or create a folder in iCloud Drive (inside Obsidian’s folder works too). The app works on its own from here: tasks, habits, reminders, widgets, the watch.</li>
+<li>Optional, for AI agents, the chat, voice and planning with your calendar: Gubernos for Mac. In Terminal run the line below (<a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>).
+<pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre></li>
+</ol>
+<p><strong>Feedback:</strong> in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>
+</section>
+</div>
 
 <!-- concept:start (scripts/build-concept.mjs) -->
 <section class="concept wide">
@@ -109,32 +142,6 @@
 </div>
 </section>
 <!-- concept:end -->
-
-<div class="cols">
-<section>
-<h2>What it does</h2>
-<ul>
-<li><strong>Capture anything:</strong> type, dictate, share from any app, or speak to your Apple Watch. The inbox agent says what each item is.</li>
-<li><strong>Plan the day</strong> around your calendar, with the one thing that matters most first.</li>
-<li><strong>Hand tasks to agents:</strong> research, drafts, follow-ups. They report back for your review.</li>
-<li><strong>Habits and protocols</strong> for your mornings and evenings, ticked off from Apple Health where it can.</li>
-<li><strong>Weekly review</strong> and a model of what you’re responsible for, committed to and want.</li>
-</ul>
-</section>
-
-<section>
-<h2 id="install">Install the beta</h2>
-<p>Gubernos is in beta: the iPhone and Apple Watch app is on TestFlight, the Mac app installs from <a href="https://github.com/old-bozman/gubernos">GitHub</a>. Things change quickly, and your files stay yours whatever happens: plain Markdown in your own iCloud.</p>
-<ol>
-<li>On your iPhone, install <strong>TestFlight</strong> from the App Store.</li>
-<li>On the iPhone, open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>. Until Apple has reviewed the first beta build, the link may say the beta isn’t accepting testers yet.</li>
-<li>Open Gubernos → <strong>Start a new system</strong> → choose or create a folder in iCloud Drive (inside Obsidian’s folder works too). The app works on its own from here: tasks, habits, reminders, widgets, the watch.</li>
-<li>Optional, for AI agents, the chat, voice and planning with your calendar: Gubernos for Mac. In Terminal run the line below (<a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>).
-<pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre></li>
-</ol>
-<p><strong>Feedback:</strong> in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>
-</section>
-</div>
 
 <footer>Gubernos · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a><br>The method is inspired by David Allen’s Getting Things Done®, Gabriele Oettingen’s WOOP and Brian Johnson’s <a href="https://www.heroic.us">Heroic</a>; Gubernos is not affiliated with any of them.</footer>
 </main>

@@ -13,7 +13,7 @@
 <header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
 
 <h1>Privacy policy</h1>
-<p class="muted">Effective 1 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
+<p class="muted">Effective 2 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
 
 <div class="card">
 <p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files in <strong>your</strong> iCloud folder and on <strong>your</strong> Mac. The developer runs no server and collects nothing: no account, no analytics, no ads, no tracking.</p>
@@ -29,13 +29,13 @@
 <ul>
 <li><strong>Your system folder.</strong> You pick a folder in iCloud Drive (or Obsidian’s iCloud folder). Gubernos reads and writes Markdown files there. Apple’s iCloud syncs them between your own devices under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</li>
 <li><strong>On the iPhone.</strong> The app keeps its settings, a copy of the folder for offline use and changes waiting to be sent, all in its own storage on the device.</li>
-<li><strong>Your Mac (optional).</strong> If you install Gubernos for Mac, the iPhone talks to your own Mac directly over your private <a href="https://tailscale.com/privacy-policy">Tailscale</a> network. A pairing code keeps other devices out.</li>
+<li><strong>Your Mac (optional).</strong> If you install Gubernos for Mac, the iPhone reaches your own Mac over HTTPS, at a public address your Mac gets from <a href="https://tailscale.com/privacy-policy">Tailscale</a> Funnel. Tailscale’s relay passes the traffic on and can’t decrypt it; the encryption ends on your Mac. A pairing code keeps other devices out. The address, which contains your Mac’s name and your Tailscale network’s name, can be seen by anyone who looks it up. If you choose the private setup instead, your Mac stays inside your Tailscale network and the iPhone needs Tailscale too.</li>
 </ul>
 
 <h2>Permissions the app asks for</h2>
 <table>
 <tr><th>Permission</th><th>What it is for</th><th>Where the data goes</th></tr>
-<tr><td>Microphone, Speech Recognition</td><td>Dictating tasks and notes</td><td>Recognised on the iPhone where the device supports it. With your Mac connected, audio is sent to your Mac and transcribed there (Whisper, locally). A recording is deleted once it has been turned into text.</td></tr>
+<tr><td>Microphone, Speech Recognition</td><td>Dictating tasks and notes</td><td>Recognised on the iPhone where the device supports it. With your Mac connected, audio is sent to your Mac and transcribed there, locally (the Mac’s own speech models or Whisper). A recording is deleted once it has been turned into text.</td></tr>
 <tr><td>Apple Health (read)</td><td>Ticking off habits you link to Health: steps, active energy, water, daylight, mindful minutes, workouts, sleep</td><td>Daily totals are written into your daily notes in your folder (and your Mac). Never to us, never to advertisers.</td></tr>
 <tr><td>Apple Health (write)</td><td>Saving the minutes of a mindfulness timer</td><td>Apple Health on your devices</td></tr>
 <tr><td>Notifications</td><td>Reminders, check-ins, “agent finished”</td><td>Scheduled on the iPhone. Pushes come from your own Mac through Apple Push Notification service; the device token is stored only on your Mac.</td></tr>

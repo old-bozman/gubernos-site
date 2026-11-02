@@ -25,7 +25,7 @@
 <h2>Let your agent do the setup</h2>
 <p>You don’t have to do the setup yourself. On your Mac, open Claude Code, Codex or Gemini CLI, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
 <div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
-<p>It installs the app, creates your folder in iCloud, sets up the phone connection and interviews you to fill the system. It asks you for what only you can do, such as signing in to Tailscale and the taps on your iPhone.</p>
+<p>It installs the app, creates your folder in iCloud, sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: signing in to Tailscale on the Mac, clicking Allow in a few dialogs, and scanning two codes with your iPhone’s camera.</p>
 
 <h2>Getting started on the iPhone</h2>
 <ol>
@@ -36,11 +36,12 @@
 <p>That’s enough for tasks, the inbox, projects, habits, reminders, widgets and the Apple Watch. Agents, the chat and the calendar in <em>Plan the day</em> need Gubernos for Mac.</p>
 
 <h2>Connecting your Mac</h2>
-<p>Your agent does this as part of the setup above. By hand: install Gubernos on your Mac (<a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>) and pick <strong>the same iCloud folder</strong>. Install Tailscale on the Mac and the iPhone with the same account. Then on the Mac open Settings → Connections → <strong>Pair a device</strong> and point the iPhone camera at the code.</p>
+<p>Your agent does this as part of the setup above. By hand: install Gubernos on your Mac (<a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>) and pick <strong>the same iCloud folder</strong>. Install Tailscale on the Mac (nothing on the iPhone), sign in and run <code>scripts/setup.sh phone</code>. Then on the Mac open Settings → Connections → <strong>Connect your iPhone</strong> and point the iPhone camera at the codes.</p>
+<p>Your Mac gets a public HTTPS address, and only devices paired with its code get in. Lost a phone? On the Mac, Settings → Connections → <strong>New code</strong> unpairs every device. To keep the Mac off the internet, run <code>scripts/setup.sh phone --private</code> instead; then the iPhone needs Tailscale too, with the same account.</p>
 
 <h2>Common questions</h2>
 <p><strong>The app can’t read my folder / files are missing.</strong> iCloud may have offloaded them. On the Mac: Finder → the folder → right-click → <strong>Keep Downloaded</strong>. On the iPhone, open the folder once in Files.</p>
-<p><strong>“Can’t reach your Mac”.</strong> The Mac must be awake and Tailscale on in both devices. Without the Mac the iPhone keeps working and sends its changes when the Mac is back.</p>
+<p><strong>“Can’t reach your Mac”.</strong> The Mac must be awake, with Tailscale running. Without the Mac the iPhone keeps working and sends its changes when the Mac is back.</p>
 <p><strong>Where is my data?</strong> In your folder, as plain Markdown files you can open in any editor or in Obsidian. See the <a href="privacy.html">privacy policy</a>.</p>
 
 <footer>Gubernos · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a></footer>

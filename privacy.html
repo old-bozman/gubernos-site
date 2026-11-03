@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gubernos · Privacy policy</title>
-<meta name="description" content="Gubernos keeps your data in your own iCloud and on your own Mac. The developer collects nothing.">
+<meta name="description" content="Gubernos keeps your data in your own iCloud and on your own Mac. Only a bug report you send reaches the developer.">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,17 +13,17 @@
 <header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
 
 <h1>Privacy policy</h1>
-<p class="muted">Effective 2 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
+<p class="muted">Effective 3 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
 
 <div class="card">
-<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files in <strong>your</strong> iCloud folder and on <strong>your</strong> Mac. The developer runs no server and collects nothing: no account, no analytics, no ads, no tracking.</p>
+<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files in <strong>your</strong> iCloud folder and on <strong>your</strong> Mac. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. The one exception is a bug report or idea you send: it reaches the developer, and it can include a picture of your screen (see <a href="#reports">Bug reports and ideas</a>).</p>
 </div>
 
 <h2>Who we are</h2>
 <p>Gubernos is made by Alexander Safonov, an individual developer (“we”). Contact: <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a>.</p>
 
 <h2>What we collect</h2>
-<p>Nothing. Gubernos has no server of its own, so none of your data reaches us. We can’t see your tasks, and we can’t delete or hand over data we never receive.</p>
+<p>Only what you send us in a <a href="#reports">bug report or idea</a>, or through TestFlight. Apart from that, none of your data reaches us: we can’t see your tasks, and we can’t delete or hand over data we never receive.</p>
 
 <h2>Where your data lives</h2>
 <ul>
@@ -36,11 +36,11 @@
 <table>
 <tr><th>Permission</th><th>What it is for</th><th>Where the data goes</th></tr>
 <tr><td>Microphone, Speech Recognition</td><td>Dictating tasks and notes</td><td>Recognised on the iPhone where the device supports it. With your Mac connected, audio is sent to your Mac and transcribed there, locally (the Mac’s own speech models or Whisper). A recording is deleted once it has been turned into text.</td></tr>
-<tr><td>Apple Health (read)</td><td>Ticking off habits you link to Health: steps, active energy, water, daylight, mindful minutes, workouts, sleep</td><td>Daily totals are written into your daily notes in your folder (and your Mac). Never to us, never to advertisers.</td></tr>
+<tr><td>Apple Health (read)</td><td>Ticking off habits you link to Health: steps, active energy, water, daylight, mindful minutes, workouts, sleep</td><td>Daily totals are written into your daily notes in your folder (and your Mac). Never to advertisers. They reach us only if they are on the screen in a report sent with screenshots.</td></tr>
 <tr><td>Apple Health (write)</td><td>Saving the minutes of a mindfulness timer</td><td>Apple Health on your devices</td></tr>
-<tr><td>Notifications</td><td>Reminders, check-ins, “agent finished”</td><td>Scheduled on the iPhone. Pushes come from your own Mac through Apple Push Notification service; the device token is stored only on your Mac.</td></tr>
+<tr><td>Notifications</td><td>Reminders and check-ins</td><td>Scheduled on the iPhone itself.</td></tr>
 </table>
-<p>Health data is never used for advertising or sold, and is not shared with anyone except the places you set up yourself.</p>
+<p>Health data is never used for advertising or sold, and is not shared with anyone except the places you set up yourself and any report you send with screenshots.</p>
 
 <h2>Services you connect yourself</h2>
 <p>These are optional and run on your Mac, under your own accounts and their own privacy policies. Gubernos only passes your data to them when you use the feature.</p>
@@ -50,15 +50,23 @@
 <li><strong>Oura</strong>, if you add your own token on the Mac, for sleep habits.</li>
 </ul>
 
-<h2>Bug reports</h2>
-<p>When you send a bug report or an idea from the app, it becomes a <strong>public issue</strong> in the app’s GitHub repository, posted under your own GitHub account from your Mac. It contains your text, the screen name, the device and recent errors, and, if <em>Publish screenshots</em> is ticked, a screenshot and a snapshot of the screen, which can show your tasks. Untick it to send only the text. You can delete the issue on GitHub at any time.</p>
+<h2 id="reports">Bug reports and ideas</h2>
+<p>When you send a bug report or an idea from the app, your Mac sends it through relay.gubernos.app, a small service we run on Cloudflare. The relay opens an issue in our <strong>private</strong> GitHub repository. You don’t need a GitHub account, and the report isn’t public.</p>
+<ul>
+<li><strong>Always sent:</strong> your text, whether it is a bug or an idea, the screen’s name, the device, screen size and theme, the app version, the time, recent errors (with task ids masked) and a random install id with no name or account attached.</li>
+<li><strong>Sent if <em>Send screenshots</em> is ticked, which it is by default:</strong> the screenshots you add, a copy of the screen you are on and the title of the open task. The copy holds whatever is on that screen, such as tasks, notes, health numbers and text you have typed. Untick it to send only the list above.</li>
+<li><strong>Reports made by voice</strong> have no tick and always include the copy of the screen.</li>
+</ul>
+<p><strong>Who handles it.</strong> We read reports to fix the app, and we use an AI agent (Claude Code by Anthropic) to work on them, so a report also goes to Anthropic. <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> carry and store reports under their own privacy policies. The relay uses your IP address only to limit how many reports can be sent, and does not store it.</p>
+<p><strong>Answers.</strong> Our answers come back to the report’s task in your app. While a report is open, your Mac asks the relay for them, using a key only your install has.</p>
+<p><strong>Keeping and deleting.</strong> Reports stay in that repository until we delete them; there is no automatic deletion. To have yours deleted, write to <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a> with the report number shown in its task.</p>
 <p>If you use TestFlight, Apple shares crash reports and the feedback you send through TestFlight with us, under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</p>
 
 <h2>Children</h2>
-<p>Gubernos is not directed at children under 13 and collects no data from anyone.</p>
+<p>Gubernos is not directed at children under 13.</p>
 
 <h2>Your choices</h2>
-<p>Everything Gubernos keeps is in your folder and on your devices: you can read, export, move or delete it at any time with Files, Finder or any text editor. Deleting the app removes its on-device storage. Disconnect a service in Settings, or revoke access in that service’s account settings.</p>
+<p>Apart from reports you send, everything Gubernos keeps is in your folder and on your devices: you can read, export, move or delete it at any time with Files, Finder or any text editor. Deleting the app removes its on-device storage. Disconnect a service in Settings, or revoke access in that service’s account settings.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be posted on this page with a new effective date. The history of this page is public in <a href="https://github.com/old-bozman/gubernos-site/commits/main/privacy.html">the site’s repository</a>.</p>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gubernos · Privacy policy</title>
-<meta name="description" content="Gubernos keeps your data in your own iCloud and on your own Mac. Only a bug report you send reaches the developer.">
+<meta name="description" content="Gubernos keeps your data in your own iCloud and on your own Mac. The developer keeps only the bug reports you send.">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -16,14 +16,14 @@
 <p class="muted">Effective 3 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
 
 <div class="card">
-<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files in <strong>your</strong> iCloud folder and on <strong>your</strong> Mac. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. The one exception is a bug report or idea you send: it reaches the developer, and it can include a picture of your screen (see <a href="#reports">Bug reports and ideas</a>).</p>
+<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files in <strong>your</strong> iCloud folder and on <strong>your</strong> Mac. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. Two things go through the developer’s relay: a <a href="#reports">bug report or idea</a> you send, which we keep and which can include a picture of your screen, and <a href="#pushes">notifications from your Mac</a>, which pass through without being kept.</p>
 </div>
 
 <h2>Who we are</h2>
 <p>Gubernos is made by Alexander Safonov, an individual developer (“we”). Contact: <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a>.</p>
 
 <h2>What we collect</h2>
-<p>Only what you send us in a <a href="#reports">bug report or idea</a>, or through TestFlight. Apart from that, none of your data reaches us: we can’t see your tasks, and we can’t delete or hand over data we never receive.</p>
+<p>We keep only what you send us in a <a href="#reports">bug report or idea</a>, or through TestFlight. <a href="#pushes">Notifications from your Mac</a> pass through our relay without being kept. Apart from that, none of your data reaches us, and we can’t delete or hand over data we never receive.</p>
 
 <h2>Where your data lives</h2>
 <ul>
@@ -38,9 +38,14 @@
 <tr><td>Microphone, Speech Recognition</td><td>Dictating tasks and notes</td><td>Recognised on the iPhone where the device supports it. With your Mac connected, audio is sent to your Mac and transcribed there, locally (the Mac’s own speech models or Whisper). A recording is deleted once it has been turned into text.</td></tr>
 <tr><td>Apple Health (read)</td><td>Ticking off habits you link to Health: steps, active energy, water, daylight, mindful minutes, workouts, sleep</td><td>Daily totals are written into your daily notes in your folder (and your Mac). Never to advertisers. They reach us only in a bug report or idea you send: its screenshots can show health numbers that are on screen, unless you untick <em>Send screenshots</em>.</td></tr>
 <tr><td>Apple Health (write)</td><td>Saving the minutes of a mindfulness timer</td><td>Apple Health on your devices</td></tr>
-<tr><td>Notifications</td><td>Reminders and check-ins</td><td>Scheduled on the iPhone itself.</td></tr>
+<tr><td>Notifications</td><td>Reminders, check-ins, and alerts from your Mac such as “agent finished”</td><td>Reminders and check-ins are scheduled on the iPhone itself. Alerts from your Mac go through our relay and Apple: see <a href="#pushes">Notifications from your Mac</a>.</td></tr>
 </table>
 <p>Health data is never used for advertising or sold, and is not shared with anyone except the places you set up yourself and, when numbers are on screen, a report you send with <em>Send screenshots</em> ticked, which is the default.</p>
+
+<h2 id="pushes">Notifications from your Mac</h2>
+<p>With Gubernos for Mac, alerts that start on your Mac, such as an agent finishing or getting stuck, reach your iPhone through Apple Push Notification service. Apple requires a key that only the developer holds, so your Mac sends each alert through relay.gubernos.app, which signs it and passes it to Apple. This happens by itself whenever an alert fires; you don’t send anything.</p>
+<p>Each alert carries your device’s push token, the title and text of the notification, which can include a task’s title and the agent’s last message, and the task or habit it points to. It isn’t end-to-end encrypted: the relay, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> and <a href="https://www.apple.com/legal/privacy/">Apple</a> handle the text to deliver it. The relay doesn’t store it, and it uses your IP address only to limit how many alerts can be sent.</p>
+<p>If you turn off the iPhone’s own reminders or check-ins in the app’s settings, those come this way too. To stop your Mac sending alerts through the relay, ask your agent to set <code>"pushRelay": null</code> in <code>~/.config/gubernos/config.json</code> and restart the app; you then get no alerts from your Mac.</p>
 
 <h2>Services you connect yourself</h2>
 <p>These are optional and run on your Mac, under your own accounts and their own privacy policies. Gubernos only passes your data to them when you use the feature.</p>

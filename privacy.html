@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gubernos · Privacy policy</title>
-<meta name="description" content="Gubernos keeps your data in your own iCloud and on your own Mac. The developer keeps only the bug reports you send.">
+<meta name="description" content="Gubernos keeps your data on your own Mac, or in your own iCloud if you choose. The developer keeps only the bug reports you send.">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,10 +13,10 @@
 <header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
 
 <h1>Privacy policy</h1>
-<p class="muted">Effective 3 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
+<p class="muted">Effective 4 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
 
 <div class="card">
-<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files in <strong>your</strong> iCloud folder and on <strong>your</strong> Mac. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. Two things go through the developer’s relay: a <a href="#reports">bug report or idea</a> you send, which we keep and which can include a picture of your screen, and <a href="#pushes">notifications from your Mac</a>, which pass through without being kept.</p>
+<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files on <strong>your</strong> Mac, or in <strong>your</strong> iCloud if you choose that, with a copy on <strong>your</strong> iPhone. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. Two things go through the developer’s relay: a <a href="#reports">bug report or idea</a> you send, which we keep and which can include a picture of your screen, and <a href="#pushes">notifications from your Mac</a>, which pass through without being kept.</p>
 </div>
 
 <h2>Who we are</h2>
@@ -27,16 +27,16 @@
 
 <h2>Where your data lives</h2>
 <ul>
-<li><strong>Your system folder.</strong> You pick a folder in iCloud Drive (or Obsidian’s iCloud folder). Gubernos reads and writes Markdown files there. Apple’s iCloud syncs them between your own devices under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</li>
-<li><strong>On the iPhone.</strong> The app keeps its settings, a copy of the folder for offline use and changes waiting to be sent, all in its own storage on the device.</li>
-<li><strong>Your Mac (optional).</strong> If you install Gubernos for Mac, the iPhone reaches your own Mac over HTTPS, at a public address your Mac gets from <a href="https://tailscale.com/privacy-policy">Tailscale</a> Funnel. Tailscale’s relay passes the traffic on and can’t decrypt it; the encryption ends on your Mac. A pairing code keeps other devices out. The address, which contains your Mac’s name and your Tailscale network’s name, can be seen by anyone who looks it up. If you choose the private setup instead, your Mac stays inside your Tailscale network and the iPhone needs Tailscale too.</li>
+<li><strong>Your system folder.</strong> Gubernos reads and writes Markdown files in one folder. With Gubernos for Mac it is on your Mac by default (<code>~/Gubernos</code>), and Gubernos doesn’t send it to iCloud. You can choose a folder in iCloud Drive or Obsidian’s iCloud folder instead, and the iPhone app without a Mac always uses one. In iCloud, Apple syncs the files between your own devices under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</li>
+<li><strong>On the iPhone.</strong> The app keeps its settings, a copy of your files for offline use and changes waiting to be sent, all in its own storage on the device. When your folder isn’t in iCloud, an up-to-date app gets that copy from your Mac, without the archive folder. Like other app data, it can be part of the iPhone’s own backup if you use one, including iCloud Backup.</li>
+<li><strong>Your Mac.</strong> Gubernos for Mac keeps a daily copy of your Markdown files in <code>~/.gubernos/backups</code>: the last 14 days and 8 weeks. The iPhone reaches your own Mac over HTTPS, at a public address your Mac gets from <a href="https://tailscale.com/privacy-policy">Tailscale</a> Funnel. Tailscale’s relay passes the traffic on and can’t decrypt it; the encryption ends on your Mac. A pairing code keeps other devices out. The address, which contains your Mac’s name and your Tailscale network’s name, can be seen by anyone who looks it up. If you choose the private setup instead, your Mac stays inside your Tailscale network and the iPhone needs Tailscale too.</li>
 </ul>
 
 <h2>Permissions the app asks for</h2>
 <table>
 <tr><th>Permission</th><th>What it is for</th><th>Where the data goes</th></tr>
 <tr><td>Microphone, Speech Recognition</td><td>Dictating tasks and notes</td><td>Recognised on the iPhone where the device supports it. With your Mac connected, audio is sent to your Mac and transcribed there, locally (the Mac’s own speech models or Whisper). A recording is deleted once it has been turned into text.</td></tr>
-<tr><td>Apple Health (read)</td><td>Ticking off habits you link to Health: steps, active energy, water, daylight, mindful minutes, workouts, sleep</td><td>Daily totals are written into your daily notes in your folder (and your Mac). Never to advertisers. They reach us only in a bug report or idea you send: its screenshots can show health numbers that are on screen, unless you untick <em>Send screenshots</em>.</td></tr>
+<tr><td>Apple Health (read)</td><td>Ticking off habits you link to Health: steps, active energy, water, daylight, mindful minutes, workouts, sleep</td><td>Daily totals are written into your daily notes in your folder. Never to advertisers. They reach us only in a bug report or idea you send: its screenshots can show health numbers that are on screen, unless you untick <em>Send screenshots</em>.</td></tr>
 <tr><td>Apple Health (write)</td><td>Saving the minutes of a mindfulness timer</td><td>Apple Health on your devices</td></tr>
 <tr><td>Notifications</td><td>Reminders, check-ins, and alerts from your Mac such as “agent finished”</td><td>Reminders and check-ins are scheduled on the iPhone itself. Alerts from your Mac go through our relay and Apple: see <a href="#pushes">Notifications from your Mac</a>.</td></tr>
 </table>
@@ -71,7 +71,7 @@
 <p>Gubernos is not directed at children under 13.</p>
 
 <h2>Your choices</h2>
-<p>Apart from reports you send, everything Gubernos keeps is in your folder and on your devices: you can read, export, move or delete it at any time with Files, Finder or any text editor. Deleting the app removes its on-device storage. Disconnect a service in Settings, or revoke access in that service’s account settings.</p>
+<p>Apart from reports you send, everything Gubernos keeps is in your folder and on your devices: you can read, export, move or delete it at any time with Files, Finder or any text editor. Deleting the app removes its on-device storage. To remove your files from the Mac completely, also delete the daily copies in <code>~/.gubernos/backups</code>. Disconnect a service in Settings, or revoke access in that service’s account settings.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be posted on this page with a new effective date. The history of this page is public in <a href="https://github.com/old-bozman/gubernos-site/commits/main/privacy.html">the site’s repository</a>.</p>

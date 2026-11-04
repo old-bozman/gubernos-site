@@ -25,24 +25,28 @@
 <h2>Let your agent do the setup</h2>
 <p>You don’t have to do the setup yourself. On your Mac, open Claude Code, Codex or Gemini CLI, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
 <div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
-<p>It installs the app, creates your folder in iCloud, sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: signing in to Tailscale on the Mac, clicking Allow in a few dialogs, and scanning two codes with your iPhone’s camera.</p>
+<p>It installs the app, creates your folder (on the Mac, or in iCloud if you’d rather), sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: signing in to Tailscale on the Mac, clicking Allow in a few dialogs, and scanning two codes with your iPhone’s camera.</p>
 
-<h2>Getting started on the iPhone</h2>
+<h2>Setting up the Mac by hand</h2>
+<p>Your agent does this as part of the setup above. By hand, follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>. Your files go in <code>~/Gubernos</code> unless you choose iCloud Drive or Obsidian’s folder.</p>
+
+<h2>Connecting your iPhone</h2>
 <ol>
 <li>Install the beta from TestFlight: <a href="./#install">how to install</a>.</li>
-<li>Open Gubernos → <strong>Start a new system</strong> → in the file picker choose iCloud Drive → <strong>New Folder</strong> (e.g. “Gubernos”) → choose it.</li>
+<li>Install Tailscale on the Mac (nothing on the iPhone), sign in and run <code>scripts/setup.sh phone</code>.</li>
+<li>On the Mac open Settings → Connections → <strong>Connect your iPhone</strong> and point the iPhone camera at the codes.</li>
 <li>Allow notifications, and Apple Health if you want habits ticked off from it.</li>
 </ol>
-<p>That’s enough for tasks, the inbox, projects, habits, reminders, widgets and the Apple Watch. Agents, the chat and the calendar in <em>Plan the day</em> need Gubernos for Mac.</p>
-
-<h2>Connecting your Mac</h2>
-<p>Your agent does this as part of the setup above. By hand: install Gubernos on your Mac (<a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>) and pick <strong>the same iCloud folder</strong>. Install Tailscale on the Mac (nothing on the iPhone), sign in and run <code>scripts/setup.sh phone</code>. Then on the Mac open Settings → Connections → <strong>Connect your iPhone</strong> and point the iPhone camera at the codes.</p>
 <p>Your Mac gets a public HTTPS address, and only devices paired with its code get in. Lost a phone? On the Mac, Settings → Connections → <strong>New code</strong> unpairs every device. To keep the Mac off the internet, run <code>scripts/setup.sh phone --private</code> instead; then the iPhone needs Tailscale too, with the same account.</p>
 
+<h2>No Mac?</h2>
+<p>The iPhone app also works on its own over a folder in iCloud Drive. Open Gubernos → <strong>Or use the phone on its own</strong> → <strong>Start a new system</strong> → in the file picker choose iCloud Drive → <strong>New Folder</strong> (e.g. “Gubernos”) → choose it.</p>
+<p>That’s enough for tasks, the inbox, projects, habits, reminders, widgets and the Apple Watch. Agents, the chat and the calendar in <em>Plan the day</em> need Gubernos for Mac.</p>
+
 <h2>Common questions</h2>
-<p><strong>The app can’t read my folder / files are missing.</strong> iCloud may have offloaded them. On the Mac: Finder → the folder → right-click → <strong>Keep Downloaded</strong>. On the iPhone, open the folder once in Files.</p>
-<p><strong>“Can’t reach your Mac”.</strong> The Mac must be awake, with Tailscale running. Without the Mac the iPhone keeps working and sends its changes when the Mac is back.</p>
-<p><strong>Where is my data?</strong> In your folder, as plain Markdown files you can open in any editor or in Obsidian. See the <a href="privacy.html">privacy policy</a>.</p>
+<p><strong>The app can’t read my folder / files are missing.</strong> If your folder is in iCloud, iCloud may have offloaded the files. On the Mac: Finder → the folder → right-click → <strong>Keep Downloaded</strong>. On the iPhone, open the folder once in Files.</p>
+<p><strong>“Can’t reach your Mac”.</strong> The Mac must be awake, with Tailscale running. Without the Mac, an up-to-date iPhone app still shows your files from its own copy and sends its changes when the Mac is back.</p>
+<p><strong>Where is my data?</strong> In your folder, as plain Markdown files you can open in any editor or in Obsidian. The Mac also keeps a daily copy of them in <code>~/.gubernos/backups</code> (the last 14 days and 8 weeks). See the <a href="privacy.html">privacy policy</a>.</p>
 
 <footer>Gubernos · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a></footer>
 </main>

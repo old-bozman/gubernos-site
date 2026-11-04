@@ -40,7 +40,7 @@ header a.get { background: var(--accent); color: #fff; border-radius: 999px; pad
 @media (max-width: 820px) { .cols { grid-template-columns: minmax(0, 1fr); gap: 0; } .cols h2 { margin-top: 36px; } }
 .beta { color: var(--muted); font-size: 15px; margin: -16px 0 20px; }
 pre { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
-code { font: 14px/1.5 ui-monospace, "SF Mono", Menlo, monospace; }
+code { font: 14px/1.5 ui-monospace, "SF Mono", Menlo, monospace; overflow-wrap: anywhere; }
 .copy { position: relative; margin: 8px 0 0; }
 .copy pre { margin: 0; padding-right: 78px; -webkit-user-select: all; user-select: all; }
 .copy button { position: absolute; top: 7px; right: 7px; min-height: 30px; padding: 0 10px; background: var(--bg); color: var(--muted); border: 1px solid var(--line); border-radius: 7px; font-family: inherit; font-size: 13px; cursor: pointer; }

@@ -16,21 +16,27 @@
 <p class="muted">Effective 4 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
 
 <div class="card">
-<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files on <strong>your</strong> Mac, or in <strong>your</strong> iCloud if you choose that, with a copy on <strong>your</strong> iPhone. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. Two things go through the developer’s relay: a <a href="#reports">bug report or idea</a> you send, which we keep and which can include a picture of your screen, and <a href="#pushes">notifications from your Mac</a>, which pass through without being kept.</p>
+<p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files on <strong>your</strong> Mac, or in <strong>your</strong> iCloud if you choose that, with a copy on <strong>your</strong> iPhone. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. Three things go through services the developer runs: a <a href="#reports">bug report or idea</a> you send, which we keep and which can include a picture of your screen; <a href="#pushes">notifications from your Mac</a>, which pass through without being kept; and, by default, <a href="#phone">your iPhone’s connection to your Mac</a>, which runs through Cloudflare under our account and could technically be seen there.</p>
 </div>
 
 <h2>Who we are</h2>
 <p>Gubernos is made by Alexander Safonov, an individual developer (“we”). Contact: <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a>.</p>
 
 <h2>What we collect</h2>
-<p>We keep only what you send us in a <a href="#reports">bug report or idea</a>, or through TestFlight. <a href="#pushes">Notifications from your Mac</a> pass through our relay without being kept. Apart from that, none of your data reaches us, and we can’t delete or hand over data we never receive.</p>
+<p>We keep only what you send us in a <a href="#reports">bug report or idea</a>, or through TestFlight. <a href="#pushes">Notifications from your Mac</a> pass through our relay without being kept. <a href="#phone">Your iPhone’s connection to your Mac</a> passes through Cloudflare without us keeping it; we hold only the record of the tunnel itself. Apart from that, none of your data reaches us, and we can’t delete or hand over data we never receive.</p>
 
 <h2>Where your data lives</h2>
 <ul>
 <li><strong>Your system folder.</strong> Gubernos reads and writes Markdown files in one folder. With Gubernos for Mac it is on your Mac by default (<code>~/Gubernos</code>), and Gubernos doesn’t send it to iCloud. You can choose a folder in iCloud Drive or Obsidian’s iCloud folder instead, and the iPhone app without a Mac always uses one. In iCloud, Apple syncs the files between your own devices under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</li>
 <li><strong>On the iPhone.</strong> The app keeps its settings, a copy of your files for offline use and changes waiting to be sent, all in its own storage on the device. When your folder isn’t in iCloud, an up-to-date app gets that copy from your Mac, without the archive folder, and keeps it out of the iPhone’s backups. The app’s settings and changes waiting to be sent can be part of those backups, like other app data.</li>
-<li><strong>Your Mac.</strong> Gubernos for Mac keeps a daily copy of your Markdown files in <code>~/.gubernos/backups</code>: the last 14 days and 8 weeks. The iPhone reaches your own Mac over HTTPS, at a public address your Mac gets from <a href="https://tailscale.com/privacy-policy">Tailscale</a> Funnel. Tailscale’s relay passes the traffic on and can’t decrypt it; the encryption ends on your Mac. A pairing code keeps other devices out. The address, which contains your Mac’s name and your Tailscale network’s name, can be seen by anyone who looks it up. If you choose the private setup instead, your Mac stays inside your Tailscale network and the iPhone needs Tailscale too.</li>
+<li><strong>Your Mac.</strong> Gubernos for Mac keeps a daily copy of your Markdown files in <code>~/.gubernos/backups</code>: the last 14 days and 8 weeks. Your iPhone reaches it over HTTPS: see <a href="#phone">Your iPhone’s connection to your Mac</a>.</li>
 </ul>
+
+<h2 id="phone">Your iPhone’s connection to your Mac</h2>
+<p>If you connect an iPhone, the setup gives your Mac a public address like <code>https://m-3f2a….gubernos.dev</code>, through a Cloudflare Tunnel. Our relay creates the address in our Cloudflare account and hands your Mac the tunnel’s token once, without keeping it. Cloudflare’s <code>cloudflared</code> program then runs in the background on your Mac. A pairing code keeps other devices out.</p>
+<p><strong>What this means.</strong> HTTPS ends at Cloudflare, not on your Mac. Everything between your iPhone and your Mac, including your files and anything from Google, is readable at Cloudflare while it passes. <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> could technically see it, and so could whoever controls the account that owns gubernos.dev, which is us. That account also controls the tunnel’s settings, so it could point the tunnel at something else your Mac can reach. We don’t store this traffic. Cloudflare may keep request data, such as IP addresses and page addresses, under its own policy.</p>
+<p><strong>What we hold.</strong> The tunnel’s record in our Cloudflare account: its random name and address, and the internet address your Mac connects from. The relay uses your IP address only to limit how many addresses can be made. To have your address deleted, write to <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a> with the address.</p>
+<p><strong>If you’d rather not.</strong> <code>scripts/setup.sh phone --tailscale</code> uses <a href="https://tailscale.com/privacy-policy">Tailscale</a> Funnel instead: Tailscale’s relay passes the traffic on and can’t decrypt it, and the encryption ends on your Mac. It needs a Tailscale account, and its address, which contains your Mac’s name and your Tailscale network’s name, can be seen by anyone who looks it up. <code>scripts/setup.sh phone --private</code> keeps your Mac inside your Tailscale network, and the iPhone needs Tailscale too.</p>
 
 <h2>Permissions the app asks for</h2>
 <table>
@@ -51,15 +57,35 @@
 <p>These are optional and run on your Mac, under your own accounts and their own privacy policies. Gubernos only passes your data to them when you use the feature.</p>
 <ul>
 <li><strong>An AI model</strong> (Claude Code by Anthropic, Codex by OpenAI or Gemini CLI by Google), on your own plan or key. When the app triages your inbox, answers in the chat, reads a voice note or runs an agent on a task, the relevant notes go to that provider. Read their terms, especially on free tiers, where a provider may use prompts to improve its models.</li>
-<li><strong>Google Calendar, Gmail, Contacts, Drive</strong>, if you connect them on your Mac with your own Google sign-in. The data goes directly between your Mac and Google. Agents may only read it. Nothing is sent and no event is created without your confirmation in the app.</li>
+<li><strong>Google Calendar, Gmail, Contacts, Drive</strong>, if you sign in on your Mac: see <a href="#google">Google</a>.</li>
 <li><strong>Oura</strong>, if you add your own token on the Mac, for sleep habits.</li>
 </ul>
+
+<h2 id="google">Google</h2>
+<p>Connecting Google is optional: on your Mac, Settings → Google → <strong>Sign in with Google</strong>. You can untick what you don’t want. Google hasn’t verified Gubernos yet, so it first warns that it “hasn’t verified this app” (Advanced → Go to Gubernos), and at most 100 people can sign in until it does.</p>
+<table>
+<tr><th>Access</th><th>What it is for</th></tr>
+<tr><td>Calendar: events, free/busy, calendar list</td><td><em>Plan the day</em> sees your meetings and free time. Time blocks become events when you apply a plan.</td></tr>
+<tr><td>Gmail: read and compose</td><td>Agents read mail a task depends on. The app drafts replies, and sends one only when you confirm it.</td></tr>
+<tr><td>Contacts: read, including people you’ve emailed</td><td>Agents look up an address or who someone is.</td></tr>
+<tr><td>Drive: read</td><td>Agents read a document a task refers to.</td></tr>
+</table>
+<p>Agents get read-only tools. Your Google sign-in is kept on your Mac, in <code>~/.config/gubernos</code>, and the data goes directly between your Mac and Google. It goes further only in these ways:</p>
+<ul>
+<li><strong>The AI model you chose.</strong> When an agent reads mail or a document, the text goes to that provider under your plan. On a plan where the provider may use prompts to improve its models, that can include this text, so we suggest not connecting Google on such a plan.</li>
+<li><strong>Your folder.</strong> What you or an agent save into a task stays in your folder, the Mac’s daily copies and the iPhone’s copy.</li>
+<li><strong>Your iPhone.</strong> When you see this data on the phone, it travels over <a href="#phone">your iPhone’s connection to your Mac</a>.</li>
+<li><strong>Notifications.</strong> An agent’s last message can quote it, and goes through <a href="#pushes">the relay</a>.</li>
+<li><strong>A report you send.</strong> With <em>Send screenshots</em> ticked, a copy of the screen can show it, and we read that report: see <a href="#reports">Bug reports and ideas</a>.</li>
+</ul>
+<p>We don’t sell this data, don’t use it for advertising and don’t use it to train AI models.</p>
+<p><strong>To remove access:</strong> go to <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> → Gubernos → Remove access, and delete <code>~/.config/gubernos/google_calendar_token.json</code> on your Mac.</p>
 
 <h2 id="reports">Bug reports and ideas</h2>
 <p>When you send a bug report or an idea from the app, your Mac sends it through relay.gubernos.app, a small service we run on Cloudflare. The relay opens an issue in our <strong>private</strong> GitHub repository. You don’t need a GitHub account, and the report isn’t public.</p>
 <ul>
 <li><strong>Always sent:</strong> your text, whether it is a bug or an idea, the screen’s name, the device, screen size and theme, the app version, the time, recent errors (with task ids masked) and a random install id with no name or account attached.</li>
-<li><strong>Sent if <em>Send screenshots</em> is ticked, which it is by default:</strong> the screenshots you add, a copy of the screen you are on and the title of the open task. The copy holds whatever is on that screen, such as tasks, notes, health numbers and text you have typed. Untick it to send only the list above.</li>
+<li><strong>Sent if <em>Send screenshots</em> is ticked, which it is by default:</strong> the screenshots you add, a copy of the screen you are on and the title of the open task. The copy holds whatever is on that screen, such as tasks, notes, health numbers, mail and calendar events, and text you have typed. Untick it to send only the list above.</li>
 <li><strong>Reports made by voice</strong> open the same form, with your words filled in. Nothing is sent until you tap <em>Send</em>.</li>
 </ul>
 <p><strong>Who handles it.</strong> We read reports to fix the app, and we use an AI agent (Claude Code by Anthropic) to work on them, so a report also goes to Anthropic. <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> carry and store reports under their own privacy policies. The relay uses your IP address only to limit how many reports can be sent, and does not store it.</p>
@@ -71,7 +97,7 @@
 <p>Gubernos is not directed at children under 13.</p>
 
 <h2>Your choices</h2>
-<p>Apart from reports you send, everything Gubernos keeps is in your folder and on your devices: you can read, export, move or delete it at any time with Files, Finder or any text editor. Deleting the app removes its on-device storage. To remove your files from the Mac completely, also delete the daily copies in <code>~/.gubernos/backups</code>. Disconnect a service in Settings, or revoke access in that service’s account settings.</p>
+<p>Apart from reports you send, everything Gubernos keeps is in your folder and on your devices: you can read, export, move or delete it at any time with Files, Finder or any text editor. Deleting the app removes its on-device storage. To remove your files from the Mac completely, also delete the daily copies in <code>~/.gubernos/backups</code>. To disconnect a service, revoke access in that service’s account settings; for Google, see <a href="#google">Google</a>.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be posted on this page with a new effective date. The history of this page is public in <a href="https://github.com/old-bozman/gubernos-site/commits/main/privacy.html">the site’s repository</a>.</p>

@@ -38,7 +38,7 @@
 <li>Allow notifications, and Apple Health if you want habits ticked off from it.</li>
 </ol>
 <p>Your Mac gets a public HTTPS address through Cloudflare, and only devices paired with its code get in. Lost a phone? On the Mac, Settings → Connections → <strong>New code</strong> unpairs every device.</p>
-<p>The traffic passes through Cloudflare under our account, and HTTPS ends there, so it could technically be seen there (<a href="privacy.html#phone">what that means</a>). To end HTTPS on your Mac, run <code>scripts/setup.sh phone --tailscale</code> instead, which needs a Tailscale account. To keep the Mac off the internet, run <code>scripts/setup.sh phone --private</code>; then the iPhone needs Tailscale too, with the same account.</p>
+<p>The traffic passes through Cloudflare under our account, and HTTPS ends there, so it could technically be seen there (<a href="privacy.html#phone">what that means</a>). To end HTTPS on your Mac, run <code>scripts/setup.sh phone --tailscale</code> instead, which needs a Tailscale account. To keep the Mac off the internet, run <code>scripts/setup.sh phone --private</code>; then the iPhone needs Tailscale too, with the same account. Both delete the Cloudflare address. To just stop it, run <code>scripts/setup.sh stop-tunnel</code>.</p>
 
 <h2>No Mac?</h2>
 <p>The iPhone app also works on its own over a folder in iCloud Drive. Open Gubernos → <strong>Or use the phone on its own</strong> → <strong>Start a new system</strong> → in the file picker choose iCloud Drive → <strong>New Folder</strong> (e.g. “Gubernos”) → choose it.</p>
@@ -46,7 +46,7 @@
 
 <h2>Connecting Google</h2>
 <p>This is optional, and only needed for agents to read Gmail, Contacts and Drive, or to use Google Calendar directly. On your Mac: Settings → Google → <strong>Sign in with Google</strong>. Google hasn’t verified Gubernos yet, so it warns first: <strong>Advanced → Go to Gubernos</strong>. At most 100 people can sign in until it’s verified. Rather use your own Google client? See the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/google.md">Google guide</a>.</p>
-<p>To remove access, go to <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> → Gubernos → Remove access, and delete <code>~/.config/gubernos/google_calendar_token.json</code> on your Mac. What it reads and where that goes: <a href="privacy.html#google">privacy policy</a>.</p>
+<p>To remove access, use Settings → Google → <strong>Disconnect</strong>. It revokes access at Google and deletes the sign-in from your Mac. If your Mac is offline, also check <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. What it reads and where that goes: <a href="privacy.html#google">privacy policy</a>.</p>
 
 <h2>Common questions</h2>
 <p><strong>The app can’t read my folder / files are missing.</strong> If your folder is in iCloud, iCloud may have offloaded the files. On the Mac: Finder → the folder → right-click → <strong>Keep Downloaded</strong>. On the iPhone, open the folder once in Files.</p>

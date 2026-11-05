@@ -13,7 +13,7 @@
 <header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
 
 <h1>Privacy policy</h1>
-<p class="muted">Effective 4 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
+<p class="muted">Effective 5 November 2026 · applies to the Gubernos app for iPhone and Apple Watch and to Gubernos for Mac</p>
 
 <div class="card">
 <p><strong>In short:</strong> your tasks, notes, habits and health numbers are stored as plain files on <strong>your</strong> Mac, or in <strong>your</strong> iCloud if you choose that, with a copy on <strong>your</strong> iPhone. The developer keeps no copy of them: no account, no analytics, no ads, no tracking. Three things go through services the developer runs: a <a href="#reports">bug report or idea</a> you send, which we keep and which can include a picture of your screen; <a href="#pushes">notifications from your Mac</a>, which pass through without being kept; and, by default, <a href="#phone">your iPhone’s connection to your Mac</a>, which runs through Cloudflare under our account and could technically be seen there.</p>
@@ -56,7 +56,7 @@
 <h2>Services you connect yourself</h2>
 <p>These are optional and run on your Mac, under your own accounts and their own privacy policies. Gubernos only passes your data to them when you use the feature.</p>
 <ul>
-<li><strong>An AI model</strong> (Claude Code by Anthropic, Codex by OpenAI or Gemini CLI by Google), on your own plan or key. When the app triages your inbox, answers in the chat, reads a voice note or runs an agent on a task, the relevant notes go to that provider. Read their terms, especially on free tiers, where a provider may use prompts to improve its models.</li>
+<li><strong>An AI model</strong> (Claude Code by Anthropic or Codex by OpenAI), on your own paid plan. When the app triages your inbox, answers in the chat, reads a voice note or runs an agent on a task, the relevant notes go to that provider. Check that provider’s terms and privacy settings: depending on them, it may use your prompts to improve its models, on a paid plan too.</li>
 <li><strong>Google Calendar, Gmail, Contacts, Drive</strong>, if you sign in on your Mac: see <a href="#google">Google</a>.</li>
 <li><strong>Oura</strong>, if you add your own token on the Mac, for sleep habits.</li>
 </ul>
@@ -72,7 +72,7 @@
 </table>
 <p>Agents get read-only tools. Your Google sign-in is kept on your Mac, in <code>~/.config/gubernos</code>, and the data goes directly between your Mac and Google. It goes further only in these ways:</p>
 <ul>
-<li><strong>The AI model you chose.</strong> When an agent reads mail or a document, the text goes to that provider under your plan. On a plan where the provider may use prompts to improve its models, that can include this text, so we suggest not connecting Google on such a plan.</li>
+<li><strong>The AI model you chose.</strong> When an agent reads mail or a document, the text goes to that provider under your plan. If your provider’s settings let it use prompts to improve its models, that can include this text, so we suggest turning that off before you connect Google.</li>
 <li><strong>Your folder.</strong> What you or an agent save into a task stays in your folder, the Mac’s daily copies and the iPhone’s copy.</li>
 <li><strong>Your iPhone.</strong> When you see this data on the phone, it travels over <a href="#phone">your iPhone’s connection to your Mac</a>.</li>
 <li><strong>Notifications.</strong> An agent’s last message can quote it, and goes through <a href="#pushes">the relay</a>.</li>

@@ -1,6 +1,6 @@
 # Gubernos
 
-> A personal operating system over plain Markdown files on the user's Mac (or in their iCloud), with AI agents. iPhone and Apple Watch app (TestFlight), Mac app (open source).
+> A personal operating system over plain Markdown files on the user's Mac (or in their iCloud), with AI agents. iPhone and Apple Watch app (TestFlight), Mac app (open source). Needs a paid Claude (Pro or higher) or ChatGPT (Plus or higher) plan; free plans aren't supported.
 
 ## Install (for agents)
 

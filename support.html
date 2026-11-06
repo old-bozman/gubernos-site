@@ -22,25 +22,27 @@
 <p><strong>On GitHub:</strong> <a href="https://github.com/old-bozman/gubernos/issues">issues</a> · <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a></p>
 </div>
 
-<h2>Let your agent do the setup</h2>
+<h2>Installing on the Mac</h2>
 <div class="card">
-<p><strong>Before you start: you need a paid AI subscription</strong>, Claude (Pro or higher) or ChatGPT (Plus or higher). Free plans aren’t supported. Don’t have one? Get it first: <a href="https://claude.com/pricing">Claude plans</a> · <a href="https://chatgpt.com/pricing">ChatGPT plans</a>.</p>
+<p><strong>You need a paid AI subscription:</strong> Claude Pro or higher, or ChatGPT Plus or higher. Free plans aren’t supported. Don’t have one? Get it first: <a href="https://claude.com/pricing">Claude plans</a> · <a href="https://chatgpt.com/pricing">ChatGPT plans</a>.</p>
 </div>
-<p>You don’t have to do the setup yourself. On your Mac, open Claude Code or Codex, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
+<p><a href="https://github.com/old-bozman/gubernos/releases/latest/download/Gubernos.dmg"><strong>Download Gubernos.dmg</strong></a> (macOS 13 or later, Apple silicon or Intel), open it and double-click Gubernos. If macOS asks whether to open an app downloaded from the Internet, choose <strong>Open</strong>. A page in your browser sets everything up, no Terminal.</p>
+
+<h2>Or let your agent do the setup</h2>
+<p>On your Mac, open Claude Code or Codex, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
 <div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
 <p>It installs the app, creates your folder (on the Mac, or in iCloud if you’d rather), sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: clicking Allow in a few dialogs, and scanning two codes with your iPhone’s camera.</p>
 
 <h2>Setting up the Mac by hand</h2>
-<p>Your agent does this as part of the setup above. By hand, follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>. Your files go in <code>~/Gubernos</code> unless you choose iCloud Drive or Obsidian’s folder.</p>
+<p>The download and your agent both do this for you. By hand, follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>. Your files go in <code>~/Gubernos</code> unless you choose iCloud Drive or Obsidian’s folder.</p>
 
 <h2>Connecting your iPhone</h2>
 <ol>
 <li>Install the beta from TestFlight: <a href="./#install">how to install</a>.</li>
-<li>On the Mac run <code>scripts/setup.sh phone</code>. There’s nothing to sign in to, and nothing else to install on the iPhone.</li>
-<li>On the Mac open Settings → Connections → <strong>Connect your iPhone</strong> and point the iPhone camera at the codes.</li>
+<li>On the Mac open Settings → Your Mac → iPhone and other devices → <strong>Connect your iPhone</strong> and point the iPhone camera at the code. There’s nothing to sign in to, and nothing else to install on the iPhone.</li>
 <li>Allow notifications, and Apple Health if you want habits ticked off from it.</li>
 </ol>
-<p>Your Mac gets a public HTTPS address through Cloudflare, and only devices paired with its code get in. Lost a phone? On the Mac, Settings → Connections → <strong>New code</strong> unpairs every device.</p>
+<p>Your Mac gets a public HTTPS address through Cloudflare, and only devices paired with its code get in. Lost a phone? On the Mac, Settings → Your Mac → iPhone and other devices → <strong>New code</strong> unpairs every device.</p>
 <p>The traffic passes through Cloudflare under our account, and HTTPS ends there, so it could technically be seen there (<a href="privacy.html#phone">what that means</a>). To end HTTPS on your Mac, run <code>scripts/setup.sh phone --tailscale</code> instead, which needs a Tailscale account. To keep the Mac off the internet, run <code>scripts/setup.sh phone --private</code>; then the iPhone needs Tailscale too, with the same account. Both delete the Cloudflare address. To just stop it, run <code>scripts/setup.sh stop-tunnel</code>.</p>
 
 <h2>No Mac?</h2>
@@ -48,8 +50,8 @@
 <p>That’s enough for tasks, the inbox, projects, habits, reminders, widgets and the Apple Watch. Agents, the chat and the calendar in <em>Plan the day</em> need Gubernos for Mac.</p>
 
 <h2>Connecting Google</h2>
-<p>This is optional, and only needed for agents to read Gmail, Contacts and Drive, or to use Google Calendar directly. On your Mac: Settings → Google → <strong>Sign in with Google</strong>. Google hasn’t verified Gubernos yet, so it warns first: <strong>Advanced → Go to Gubernos</strong>. At most 100 people can sign in until it’s verified. Rather use your own Google client? See the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/google.md">Google guide</a>.</p>
-<p>To remove access, use Settings → Google → <strong>Disconnect</strong>. It revokes access at Google and deletes the sign-in from your Mac. If your Mac is offline, also check <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. What it reads and where that goes: <a href="privacy.html#google">privacy policy</a>.</p>
+<p>This is optional, and only needed for agents to read Gmail, Contacts and Drive, or to use Google Calendar directly. On your Mac: Settings → Your Mac → Google → <strong>Sign in with Google</strong>. Google hasn’t verified Gubernos yet, so it warns first: <strong>Advanced → Go to Gubernos</strong>. At most 100 people can sign in until it’s verified. Rather use your own Google client? See the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/google.md">Google guide</a>.</p>
+<p>To remove access, use Settings → Your Mac → Google → <strong>Disconnect</strong>. It revokes access at Google and deletes the sign-in from your Mac. If your Mac is offline, also check <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. What it reads and where that goes: <a href="privacy.html#google">privacy policy</a>.</p>
 
 <h2>Common questions</h2>
 <p><strong>The app can’t read my folder / files are missing.</strong> If your folder is in iCloud, iCloud may have offloaded the files. On the Mac: Finder → the folder → right-click → <strong>Keep Downloaded</strong>. On the iPhone, open the folder once in Files.</p>

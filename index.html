@@ -54,19 +54,22 @@
 <section>
 <h2 id="install">Install the beta</h2>
 <div class="card">
-<p><strong>Before you install: you need a paid AI subscription.</strong> Gubernos runs on your own plan: Claude (Pro or higher) or ChatGPT (Plus or higher). The first interview, the chat and the agents all need it, and free plans aren’t supported. Don’t have one? Get it first: <a href="https://claude.com/pricing">Claude plans</a> · <a href="https://chatgpt.com/pricing">ChatGPT plans</a>.</p>
+<p><strong>You need a paid AI subscription:</strong> Claude Pro or higher, or ChatGPT Plus or higher. Free plans aren’t supported. Gubernos runs on your own plan: the first interview, the chat and the agents all need it. Don’t have one? Get it first: <a href="https://claude.com/pricing">Claude plans</a> · <a href="https://chatgpt.com/pricing">ChatGPT plans</a>.</p>
 </div>
-<p><strong>You don’t have to do the setup yourself: your AI agent does it.</strong> On your Mac, open Claude Code or Codex, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
-<div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
-<p>It checks the Mac, installs what’s missing (asking first), creates your folder (on the Mac, or in iCloud if you’d rather), starts the app, sets up the phone connection and then interviews you to fill the system. It asks you for what only you can do: clicking Allow in a few dialogs, and scanning two codes with your iPhone’s camera, one for the app and one to connect it. The phone needs nothing else. It reaches your Mac through Cloudflare, and only paired devices get in (<a href="privacy.html#phone">what that means</a>).</p>
-<p><strong>By hand?</strong> In Terminal run the line below, then follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>.</p>
-<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre><button type="button" hidden>Copy</button></div>
+<p class="download"><a class="get" href="https://github.com/old-bozman/gubernos/releases/latest/download/Gubernos.dmg">Download Gubernos for Mac</a></p>
+<p class="muted">macOS 13 or later, Apple silicon or Intel. Open it and double-click Gubernos: a page in your browser sets everything up, no Terminal.</p>
 <p><strong>Then the iPhone app</strong> (beta, through TestFlight):</p>
 <ol>
 <li>Install <strong>TestFlight</strong> from the App Store.</li>
-<li>Open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>.</li>
-<li>Scan the connection code your Mac shows.</li>
+<li>On the iPhone, open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>.</li>
+<li>On the Mac, Settings → Your Mac → iPhone and other devices → <strong>Connect your iPhone</strong>, and scan the code with the iPhone’s camera.</li>
 </ol>
+<p>The phone reaches your Mac through Cloudflare, and only paired devices get in (<a href="privacy.html#phone">what that means</a>).</p>
+<p><strong>Or let your AI agent do the setup.</strong> On your Mac, open Claude Code or Codex, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
+<div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
+<p>It installs the app, creates your folder (on the Mac, or in iCloud if you’d rather), sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: clicking Allow in a few dialogs, and scanning codes with your iPhone’s camera.</p>
+<p><strong>Or in Terminal:</strong> run the line below, then follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>.</p>
+<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre><button type="button" hidden>Copy</button></div>
 <p><strong>No Mac?</strong> The iPhone app also works on its own over a folder in iCloud Drive: open Gubernos → <strong>Or use the phone on its own</strong> → <strong>Start a new system</strong>. You get tasks, habits, reminders, widgets and the watch. Agents, the chat, voice and planning with your calendar need the Mac.</p>
 <p>Gubernos is in beta and changes quickly. Your files stay yours whatever happens: plain Markdown in your own folder.</p>
 <p><strong>Feedback:</strong> in the app, menu ☰ → <strong>Report bug / idea</strong> (with the Mac; answers come back to you there), or in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>

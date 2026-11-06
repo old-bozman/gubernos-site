@@ -51,7 +51,7 @@
 <h2 id="pushes">Notifications from your Mac</h2>
 <p>With Gubernos for Mac, alerts that start on your Mac, such as an agent finishing or getting stuck, reach your iPhone through Apple Push Notification service. Apple requires a key that only the developer holds, so your Mac sends each alert through relay.gubernos.app, which signs it and passes it to Apple. This happens by itself whenever an alert fires; you don’t send anything.</p>
 <p>Each alert carries your device’s push token, the title and text of the notification, which can include a task’s title and the agent’s last message, and the task or habit it points to. It isn’t end-to-end encrypted: the relay, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> and <a href="https://www.apple.com/legal/privacy/">Apple</a> handle the text to deliver it. The relay doesn’t store it, and it uses your IP address only to limit how many alerts can be sent.</p>
-<p>If you turn off the iPhone’s own reminders or check-ins in the app’s settings, those come this way too. To stop this, turn off <strong>Pushes through the relay</strong> in Settings → Notifications on your Mac; you then get no alerts from your Mac, and reminders and check-ins the iPhone schedules itself still ring. With an up-to-date iPhone app, turning off Gubernos’s notifications in the iPhone’s Settings also stops your Mac sending them to that phone, once the app has next reached your Mac.</p>
+<p>If you turn off the iPhone’s own reminders or check-ins in the app’s settings, those come this way too. To stop this, turn off <strong>Pushes through the relay</strong> on your Mac, in Settings → Your Mac; you then get no alerts from your Mac, and reminders and check-ins the iPhone schedules itself still ring. With an up-to-date iPhone app, turning off Gubernos’s notifications in the iPhone’s Settings also stops your Mac sending them to that phone, once the app has next reached your Mac.</p>
 
 <h2>Services you connect yourself</h2>
 <p>These are optional and run on your Mac, under your own accounts and their own privacy policies. Gubernos only passes your data to them when you use the feature.</p>
@@ -62,7 +62,7 @@
 </ul>
 
 <h2 id="google">Google</h2>
-<p>Connecting Google is optional: on your Mac, Settings → Google → <strong>Sign in with Google</strong>. You can untick what you don’t want. Google hasn’t verified Gubernos yet, so it first warns that it “hasn’t verified this app” (Advanced → Go to Gubernos), and at most 100 people can sign in until it does.</p>
+<p>Connecting Google is optional: on your Mac, Settings → Your Mac → Google → <strong>Sign in with Google</strong>. You can untick what you don’t want. Google hasn’t verified Gubernos yet, so it first warns that it “hasn’t verified this app” (Advanced → Go to Gubernos), and at most 100 people can sign in until it does.</p>
 <table>
 <tr><th>Access</th><th>What it is for</th></tr>
 <tr><td>Calendar: events, free/busy, calendar list</td><td><em>Plan the day</em> sees your meetings and free time. Time blocks become events when you apply a plan.</td></tr>
@@ -79,7 +79,7 @@
 <li><strong>A report you send.</strong> With <em>Send screenshots</em> ticked, a copy of the screen can show it, and we read that report: see <a href="#reports">Bug reports and ideas</a>.</li>
 </ul>
 <p>We don’t sell this data, don’t use it for advertising and don’t use it to train AI models.</p>
-<p><strong>To remove access:</strong> in Gubernos, Settings → Google → <strong>Disconnect</strong>. It revokes access at Google and deletes the sign-in from your Mac. If your Mac is offline, Google doesn’t get that message, so check <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. What is already saved in your folder stays until you delete it.</p>
+<p><strong>To remove access:</strong> in Gubernos, Settings → Your Mac → Google → <strong>Disconnect</strong>. It revokes access at Google and deletes the sign-in from your Mac. If your Mac is offline, Google doesn’t get that message, so check <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. What is already saved in your folder stays until you delete it.</p>
 
 <h2 id="reports">Bug reports and ideas</h2>
 <p>When you send a bug report or an idea from the app, your Mac sends it through relay.gubernos.app, a small service we run on Cloudflare. The relay opens an issue in our <strong>private</strong> GitHub repository. You don’t need a GitHub account, and the report isn’t public.</p>

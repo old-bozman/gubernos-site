@@ -5,7 +5,8 @@
 ## Install (for agents)
 
 - [Mac app download](https://github.com/old-bozman/gubernos/releases/latest/download/Gubernos.dmg): the easiest way for a person (macOS 13 or later, no Terminal).
-- Linux, or Windows in WSL: `curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard` (needs curl, tar, rsync; on Windows first `wsl --install`).
+- Windows: in PowerShell, `irm https://gubernos.app/install.ps1 | iex` (installs WSL with Ubuntu when missing; then a restart, a Linux user, and the same line again).
+- Linux: `curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard` (needs curl, tar, rsync).
 - [Android](https://gubernos.app/#android): no native app; install from Chrome as a web app paired with the computer running Gubernos.
 - [Setup instructions](https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md): follow the part "For the agent".
 - [Repository](https://github.com/old-bozman/gubernos): README, and AGENTS.md for work on the code.

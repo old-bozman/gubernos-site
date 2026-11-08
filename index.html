@@ -17,7 +17,7 @@
 <div>
 <h1>Gubernos</h1>
 <p class="tagline">Steer your life, not your to&#8209;do app.</p>
-<p class="app-get"><a class="get" href="#install">Install the beta</a><span>iPhone · Apple Watch · Mac · <a href="#android">Android</a> · <a href="#linux">Linux, Windows</a></span></p>
+<p class="app-get"><a class="get" href="#install">Install the beta</a><span>iPhone · Apple Watch · Mac · <a href="#android">Android</a> · <a href="#windows">Windows</a> · <a href="#linux">Linux</a></span></p>
 </div>
 </header>
 
@@ -71,10 +71,15 @@
 <p>It installs the app, creates your folder (on the Mac, or in iCloud if you’d rather), sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: clicking Allow in a few dialogs, and scanning codes with your iPhone’s camera.</p>
 <p><strong>Or in Terminal:</strong> run the line below, then follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>.</p>
 <div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre><button type="button" hidden>Copy</button></div>
-<h3 id="linux">Linux, or Windows</h3>
-<p>Gubernos also runs on Linux, and on Windows inside WSL (first, in PowerShell: <code>wsl --install</code>). In a terminal there, run:</p>
+<h3 id="windows">Windows</h3>
+<p>Open PowerShell (Start → type PowerShell) and paste:</p>
+<div class="copy"><pre><code>irm https://gubernos.app/install.ps1 | iex</code></pre><button type="button" hidden>Copy</button></div>
+<p>It installs WSL (Windows’ own Linux) with Ubuntu if they aren’t there. Windows asks for an administrator’s OK; then restart, choose a Linux user name and password in the Ubuntu window, and run the same line again. Then the setup page opens in your browser, and you sign in to Claude or ChatGPT there.</p>
+
+<h3 id="linux">Linux</h3>
+<p>In a terminal, run:</p>
 <div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard</code></pre><button type="button" hidden>Copy</button></div>
-<p>It opens the same setup page as on the Mac (on WSL in the Windows browser; on a machine without a screen it prints the link), and you sign in to Claude or ChatGPT there. It needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. Then connect your phone the same way: the iPhone app above, or Android below. Details: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">install guide</a>.</p>
+<p>It opens the same setup page as on the Mac (on a machine without a screen it prints the link), and you sign in to Claude or ChatGPT there. It needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. On Windows or Linux, connect your phone the same way: the iPhone app above, or Android below. Details: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">install guide</a>.</p>
 
 <h3 id="android">Android</h3>
 <p>There’s no Android app yet, but Gubernos installs from Chrome as an app, with notifications. It needs Gubernos running on a computer: a Mac, Linux, or Windows.</p>

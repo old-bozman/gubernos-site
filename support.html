@@ -36,10 +36,16 @@
 <h2>Setting up the Mac by hand</h2>
 <p>The download and your agent both do this for you. By hand, follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>. Your files go in <code>~/Gubernos</code> unless you choose iCloud Drive or Obsidian’s folder.</p>
 
-<h2 id="linux">Linux, or Windows</h2>
-<p>Gubernos also runs on Linux, and on Windows inside WSL (first, in PowerShell: <code>wsl --install</code>). In a terminal there, run:</p>
+<h2 id="windows">Windows</h2>
+<p>Open PowerShell (Start → type PowerShell) and paste:</p>
+<div class="copy"><pre><code>irm https://gubernos.app/install.ps1 | iex</code></pre><button type="button" hidden>Copy</button></div>
+<p>It installs WSL (Windows’ own Linux) with Ubuntu if they aren’t there. Windows asks for an administrator’s OK; then restart, choose a Linux user name and password in the Ubuntu window, and run the same line again. Then the setup page opens in your browser.</p>
+<p>Gubernos runs inside Ubuntu. Linux stops when its last window closes, so the setup puts a small hidden starter, <code>Gubernos.vbs</code>, in your Windows Startup folder: Gubernos runs after you log in, with no window open. Delete it to stop that.</p>
+
+<h2 id="linux">Linux</h2>
+<p>In a terminal, run (inside WSL too, if you’d rather do it by hand):</p>
 <div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard</code></pre><button type="button" hidden>Copy</button></div>
-<p>It opens the same setup page as on the Mac (on WSL in the Windows browser; on a machine without a screen it prints the link). You sign in to Claude or ChatGPT on that page; with no browser on the machine, it shows the sign-in link to open on any device. It needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. On Windows, the setup puts a small hidden starter, <code>Gubernos.vbs</code>, in your Startup folder so Gubernos runs after you log in; delete it to stop that. The calendar comes from Google there. More: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">install guide</a>.</p>
+<p>It opens the same setup page as on the Mac (on WSL in the Windows browser; on a machine without a screen it prints the link). You sign in to Claude or ChatGPT on that page; with no browser on the machine, it shows the sign-in link to open on any device. It needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. The calendar comes from Google there. More: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">install guide</a>.</p>
 
 <h2>Connecting your iPhone</h2>
 <ol>

@@ -32,6 +32,9 @@ header a.get { background: var(--accent); color: #fff; border-radius: 999px; pad
 .download { margin: 20px 0 4px; }
 .download a.get { display: inline-block; background: var(--accent); color: #fff; border-radius: 999px; padding: 10px 22px; font-weight: 600; text-decoration: none; }
 .download + .muted { margin-top: 4px; }
+.demo { margin: 0 0 28px; }
+.demo video { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.demo figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
 .gallery { display: flex; align-items: center; gap: 14px; overflow-x: auto; scroll-snap-type: x proximity; padding: 4px 0 12px; scrollbar-width: thin; }
 .gallery img { flex: none; width: auto; height: 440px; border: 1px solid var(--line); border-radius: 22px; scroll-snap-align: start; }
 .gallery .watch { width: 208px; height: auto; border-radius: 36px; }

@@ -1,10 +1,12 @@
 # Gubernos
 
-> A personal operating system over plain Markdown files on the user's Mac (or in their iCloud), with AI agents. iPhone and Apple Watch app (TestFlight), Mac app (open source). Needs an AI subscription: Claude with Claude Code (Pro or higher), or any ChatGPT subscription.
+> A personal operating system over plain Markdown files on the user's Mac (or in their iCloud), with AI agents. iPhone and Apple Watch app (TestFlight), Android as a web app from Chrome; runs on a Mac, Linux or Windows (WSL), open source. Needs an AI subscription: Claude with Claude Code (Pro or higher), or any ChatGPT subscription.
 
 ## Install (for agents)
 
 - [Mac app download](https://github.com/old-bozman/gubernos/releases/latest/download/Gubernos.dmg): the easiest way for a person (macOS 13 or later, no Terminal).
+- Linux, or Windows in WSL: `curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard` (needs curl, tar, rsync; on Windows first `wsl --install`).
+- [Android](https://gubernos.app/#android): no native app; install from Chrome as a web app paired with the computer running Gubernos.
 - [Setup instructions](https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md): follow the part "For the agent".
 - [Repository](https://github.com/old-bozman/gubernos): README, and AGENTS.md for work on the code.
 - [iPhone beta](https://testflight.apple.com/join/rBUGmgJG): the person installs TestFlight, opens this link on the iPhone, then Accept and Install.

@@ -36,6 +36,11 @@
 <h2>Setting up the Mac by hand</h2>
 <p>The download and your agent both do this for you. By hand, follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>. Your files go in <code>~/Gubernos</code> unless you choose iCloud Drive or Obsidian’s folder.</p>
 
+<h2 id="linux">Linux, or Windows</h2>
+<p>Gubernos also runs on Linux, and on Windows inside WSL (first, in PowerShell: <code>wsl --install</code>). In a terminal there, run:</p>
+<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard</code></pre><button type="button" hidden>Copy</button></div>
+<p>It opens the same setup page as on the Mac (on WSL in the Windows browser; on a machine without a screen it prints the link). You sign in to Claude or ChatGPT on that page; with no browser on the machine, it shows the sign-in link to open on any device. It needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. On Windows, the setup puts a small hidden starter, <code>Gubernos.vbs</code>, in your Startup folder so Gubernos runs after you log in; delete it to stop that. The calendar comes from Google there. More: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">install guide</a>.</p>
+
 <h2>Connecting your iPhone</h2>
 <ol>
 <li>Install the beta from TestFlight: <a href="./#install">how to install</a>.</li>
@@ -45,9 +50,19 @@
 <p>Your Mac gets a public HTTPS address through Cloudflare, and only devices paired with its code get in. Lost a phone? On the Mac, Settings → Your Mac → iPhone and other devices → <strong>New code</strong> unpairs every device.</p>
 <p>The traffic passes through Cloudflare under our account, and HTTPS ends there, so it could technically be seen there (<a href="privacy.html#phone">what that means</a>). To end HTTPS on your Mac, run <code>scripts/setup.sh phone --tailscale</code> instead, which needs a Tailscale account. To keep the Mac off the internet, run <code>scripts/setup.sh phone --private</code>; then the iPhone needs Tailscale too, with the same account. Both delete the Cloudflare address. To just stop it, run <code>scripts/setup.sh stop-tunnel</code>.</p>
 
-<h2>No Mac?</h2>
+<h2 id="android">Connecting an Android phone</h2>
+<p>There’s no Android app yet, but Gubernos installs from Chrome as an app, with notifications. It needs Gubernos running on a computer: a Mac, Linux, or Windows.</p>
+<ol>
+<li>On that computer, in Gubernos: Settings → Your Mac → iPhone and other devices → <strong>Android or a browser</strong>. It gets an https address in about a minute.</li>
+<li>Point the phone’s camera at the code marked <strong>Android</strong> and open it in <strong>Chrome</strong>: the phone pairs and Gubernos opens. No camera handy? <strong>Copy link</strong> and send it to the phone.</li>
+<li>Chrome menu <strong>⋮</strong> → <strong>Install app</strong>.</li>
+<li>In Gubernos on the phone: Settings → This device → Notifications <strong>On</strong>.</li>
+</ol>
+<p>Compared with the iPhone app it has no offline copy, widgets or Apple Health, and reminders come as pushes from the computer, so it needs to be on. The phone connects through the same Cloudflare address as an iPhone (<a href="privacy.html#phone">what that means</a>).</p>
+
+<h2>No computer?</h2>
 <p>The iPhone app also works on its own over a folder in iCloud Drive. Open Gubernos → <strong>Or use the phone on its own</strong> → <strong>Start a new system</strong> → in the file picker choose iCloud Drive → <strong>New Folder</strong> (e.g. “Gubernos”) → choose it.</p>
-<p>That’s enough for tasks, the inbox, projects, habits, reminders, widgets and the Apple Watch. Agents, the chat and the calendar in <em>Plan the day</em> need Gubernos for Mac.</p>
+<p>That’s enough for tasks, the inbox, projects, habits, reminders, widgets and the Apple Watch. Agents, the chat and the calendar in <em>Plan the day</em> need Gubernos on a computer.</p>
 
 <h2>Connecting Google</h2>
 <p>This is optional, and only needed for agents to read Gmail, Contacts and Drive, or to use Google Calendar directly. On your Mac: Settings → Your Mac → Google → <strong>Sign in with Google</strong>. Google hasn’t verified Gubernos yet, so it warns first: <strong>Advanced → Go to Gubernos</strong>. At most 100 people can sign in until it’s verified. Rather use your own Google client? See the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/google.md">Google guide</a>.</p>
@@ -56,6 +71,7 @@
 <h2>Common questions</h2>
 <p><strong>The app can’t read my folder / files are missing.</strong> If your folder is in iCloud, iCloud may have offloaded the files. On the Mac: Finder → the folder → right-click → <strong>Keep Downloaded</strong>. On the iPhone, open the folder once in Files.</p>
 <p><strong>“Can’t reach your Mac”.</strong> The Mac must be awake and online. Without the Mac, an up-to-date iPhone app still shows your files from its own copy and sends its changes when the Mac is back.</p>
+<p><strong>Can I bring my tasks from another app?</strong> Yes: Settings → General → <strong>Import tasks</strong>, from Todoist, Things, Apple Reminders, or any app’s export file (a TickTick CSV, for example). You see what comes in before it’s added.</p>
 <p><strong>Where is my data?</strong> In your folder, as plain Markdown files you can open in any editor or in Obsidian. The Mac also keeps a daily copy of them in <code>~/.gubernos/backups</code> (the last 14 days and 8 weeks). See the <a href="privacy.html">privacy policy</a>.</p>
 
 <footer>Gubernos · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a></footer>

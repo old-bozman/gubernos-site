@@ -17,7 +17,7 @@
 <div>
 <h1>Gubernos</h1>
 <p class="tagline">Steer your life, not your to&#8209;do app.</p>
-<p class="app-get"><a class="get" href="#install">Install the beta</a><span>iPhone · Apple Watch · Mac</span></p>
+<p class="app-get"><a class="get" href="#install">Install the beta</a><span>iPhone · Apple Watch · Mac · <a href="#android">Android</a> · <a href="#linux">Linux, Windows</a></span></p>
 </div>
 </header>
 
@@ -36,7 +36,7 @@
 <p class="gallery-note">Screens from a demo system.</p>
 
 <div class="card">
-<p><strong>Yours, all the way down.</strong> Everything is plain Markdown files on your own Mac (or in your iCloud, if you like). Your Mac is the “server”. Agents run on your own Claude or ChatGPT subscription. No account with us, no tracking, and we keep nothing of yours except a report you send.</p>
+<p><strong>Yours, all the way down.</strong> Everything is plain Markdown files on your own computer (or in your iCloud, if you like). Your Mac, or a Linux or Windows PC, is the “server”. Agents run on your own Claude or ChatGPT subscription. No account with us, no tracking, and we keep nothing of yours except a report you send.</p>
 </div>
 
 <div class="cols">
@@ -48,6 +48,7 @@
 <li><strong>Hand tasks to agents:</strong> research, drafts, follow-ups. They report back for your review.</li>
 <li><strong>Habits and protocols</strong> for your mornings and evenings, ticked off from Apple Health where it can.</li>
 <li><strong>Weekly review</strong> and a model of what you’re responsible for, committed to and want.</li>
+<li><strong>Bring your tasks:</strong> import from Todoist, Things, Apple Reminders or any app’s export file (Settings → General → Import tasks).</li>
 </ul>
 </section>
 
@@ -70,7 +71,23 @@
 <p>It installs the app, creates your folder (on the Mac, or in iCloud if you’d rather), sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: clicking Allow in a few dialogs, and scanning codes with your iPhone’s camera.</p>
 <p><strong>Or in Terminal:</strong> run the line below, then follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>.</p>
 <div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre><button type="button" hidden>Copy</button></div>
-<p><strong>No Mac?</strong> The iPhone app also works on its own over a folder in iCloud Drive: open Gubernos → <strong>Or use the phone on its own</strong> → <strong>Start a new system</strong>. You get tasks, habits, reminders, widgets and the watch. Agents, the chat, voice and planning with your calendar need the Mac.</p>
+<h3 id="linux">Linux, or Windows</h3>
+<p>Gubernos also runs on Linux, and on Windows inside WSL (first, in PowerShell: <code>wsl --install</code>). In a terminal there, run:</p>
+<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard</code></pre><button type="button" hidden>Copy</button></div>
+<p>It opens the same setup page as on the Mac (on WSL in the Windows browser; on a machine without a screen it prints the link), and you sign in to Claude or ChatGPT there. It needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. Then connect your phone the same way: the iPhone app above, or Android below. Details: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">install guide</a>.</p>
+
+<h3 id="android">Android</h3>
+<p>There’s no Android app yet, but Gubernos installs from Chrome as an app, with notifications. It needs Gubernos running on a computer: a Mac, Linux, or Windows.</p>
+<ol>
+<li>On that computer, in Gubernos: Settings → Your Mac → iPhone and other devices → <strong>Android or a browser</strong>. It gets an https address in about a minute.</li>
+<li>Point the phone’s camera at the code marked <strong>Android</strong> and open it in <strong>Chrome</strong>: the phone pairs and Gubernos opens. No camera handy? <strong>Copy link</strong> and send it to the phone.</li>
+<li>Chrome menu <strong>⋮</strong> → <strong>Install app</strong>.</li>
+<li>In Gubernos on the phone: Settings → This device → Notifications <strong>On</strong>.</li>
+</ol>
+<p class="muted">Compared with the iPhone app: no offline copy, widgets or Apple Health, and reminders come as pushes from the computer, so it needs to be on.</p>
+
+<h3>No computer?</h3>
+<p>The iPhone app also works on its own over a folder in iCloud Drive: open Gubernos → <strong>Or use the phone on its own</strong> → <strong>Start a new system</strong>. You get tasks, habits, reminders, widgets and the watch. Agents, the chat, voice and planning with your calendar need Gubernos on a computer.</p>
 <p>Gubernos is in beta and changes quickly. Your files stay yours whatever happens: plain Markdown in your own folder.</p>
 <p><strong>Feedback:</strong> in the app, menu ☰ → <strong>Report bug / idea</strong> (with the Mac; answers come back to you there), or in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>
 </section>

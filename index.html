@@ -17,11 +17,11 @@
 <div>
 <h1>Gubernos</h1>
 <p class="tagline">Steer your life, not your to&#8209;do app.</p>
-<p class="app-get"><a class="get" href="#install">Install the beta</a><span>iPhone · Apple Watch · Mac · <a href="#android">Android</a> · <a href="#windows">Windows</a> · <a href="#linux">Linux</a></span></p>
+<p class="app-get"><a class="get" href="#install">Install the beta</a><span>Runs on <a href="#mac">Mac</a>, <a href="#windows">Windows</a> or <a href="#linux">Linux</a> · with <a href="#iphone">iPhone</a>, Apple Watch and <a href="#android">Android</a></span></p>
 </div>
 </header>
 
-<p class="lead">A personal operating system (from Latin <em>gubernare</em>, to steer): tasks, projects, goals, habits and your day, with AI agents that take part of the work off your hands.</p>
+<p class="lead">A personal operating system (from Latin <em>gubernare</em>, to steer): tasks, projects, goals, habits and your day, with AI agents that take part of the work off your hands. Your files stay on your own computer.</p>
 <p class="beta"><strong>Beta.</strong> Things change quickly, and your files stay yours whatever happens.</p>
 
 <figure class="demo">
@@ -39,69 +39,6 @@
 <img class="mac" src="shots/mac-protocol.png" width="1960" height="1225" alt="Gubernos for Mac: the Protocol screen in a wide layout with a sidebar.">
 </section>
 <p class="gallery-note">Screens from a demo system.</p>
-
-<div class="card">
-<p><strong>Yours, all the way down.</strong> Everything is plain Markdown files on your own computer (or in your iCloud, if you like). Your Mac, or a Linux or Windows PC, is the “server”. Agents run on your own Claude or ChatGPT subscription. No account with us, no tracking, and we keep nothing of yours except a report you send.</p>
-</div>
-
-<div class="cols">
-<section>
-<h2>What it does</h2>
-<ul>
-<li><strong>Capture anything:</strong> type, dictate, share from any app, or speak to your Apple Watch. The inbox agent says what each item is.</li>
-<li><strong>Plan the day</strong> around your calendar, with the one thing that matters most first.</li>
-<li><strong>Hand tasks to agents:</strong> research, drafts, follow-ups. They report back for your review.</li>
-<li><strong>Habits and protocols</strong> for your mornings and evenings, ticked off from Apple Health where it can.</li>
-<li><strong>Weekly review</strong> and a model of what you’re responsible for, committed to and want.</li>
-<li><strong>Bring your tasks:</strong> import from Todoist, Things, Apple Reminders or any app’s export file (Settings → General → Import tasks).</li>
-</ul>
-</section>
-
-<section>
-<h2 id="install">Install the beta</h2>
-<div class="card">
-<p><strong>You need an AI subscription:</strong> Claude with Claude Code (Pro or higher), or any ChatGPT subscription. Gubernos runs on it: the first interview, the chat and the agents all need it. Don’t have one? Get it first: <a href="https://claude.com/pricing">Claude plans</a> · <a href="https://chatgpt.com/pricing">ChatGPT plans</a>.</p>
-</div>
-<p class="download"><a class="get" href="https://github.com/old-bozman/gubernos/releases/latest/download/Gubernos.dmg">Download Gubernos for Mac</a></p>
-<p class="muted">macOS 13 or later, Apple silicon or Intel. Open it and double-click Gubernos: a page in your browser sets everything up, no Terminal.</p>
-<p><strong>Then the iPhone app</strong> (beta, through TestFlight):</p>
-<ol>
-<li>Install <strong>TestFlight</strong> from the App Store.</li>
-<li>On the iPhone, open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>.</li>
-<li>On the Mac, Settings → Your Mac → iPhone and other devices → <strong>Connect your iPhone</strong>, and scan the code with the iPhone’s camera.</li>
-</ol>
-<p>The phone reaches your Mac through Cloudflare, and only paired devices get in (<a href="privacy.html#phone">what that means</a>).</p>
-<p><strong>Or let your AI agent do the setup.</strong> On your Mac, open Claude Code or Codex, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
-<div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
-<p>It installs the app, creates your folder (on the Mac, or in iCloud if you’d rather), sets up the phone connection and interviews you to fill the system. It asks you for what only you can do: clicking Allow in a few dialogs, and scanning codes with your iPhone’s camera.</p>
-<p><strong>Or in Terminal:</strong> run the line below, then follow the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>.</p>
-<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre><button type="button" hidden>Copy</button></div>
-<h3 id="windows">Windows</h3>
-<p>Open PowerShell (Start → type PowerShell) and paste:</p>
-<div class="copy"><pre><code>irm https://gubernos.app/install.ps1 | iex</code></pre><button type="button" hidden>Copy</button></div>
-<p>It installs WSL (Windows’ own Linux) with Ubuntu if they aren’t there. Windows asks for an administrator’s OK; then restart, choose a Linux user name and password in the Ubuntu window, and run the same line again. Then the setup page opens in your browser, and you sign in to Claude or ChatGPT there.</p>
-
-<h3 id="linux">Linux</h3>
-<p>In a terminal, run:</p>
-<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard</code></pre><button type="button" hidden>Copy</button></div>
-<p>It opens the same setup page as on the Mac (on a machine without a screen it prints the link), and you sign in to Claude or ChatGPT there. It needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. On Windows or Linux, connect your phone the same way: the iPhone app above, or Android below. Details: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">install guide</a>.</p>
-
-<h3 id="android">Android</h3>
-<p>There’s no Android app yet, but Gubernos installs from Chrome as an app, with notifications. It needs Gubernos running on a computer: a Mac, Linux, or Windows.</p>
-<ol>
-<li>On that computer, in Gubernos: Settings → Your Mac → iPhone and other devices → <strong>Android or a browser</strong>. It gets an https address in about a minute.</li>
-<li>Point the phone’s camera at the code marked <strong>Android</strong> and open it in <strong>Chrome</strong>: the phone pairs and Gubernos opens. No camera handy? <strong>Copy link</strong> and send it to the phone.</li>
-<li>Chrome menu <strong>⋮</strong> → <strong>Install app</strong>.</li>
-<li>In Gubernos on the phone: Settings → This device → Notifications <strong>On</strong>.</li>
-</ol>
-<p class="muted">Compared with the iPhone app: no offline copy, widgets or Apple Health, and reminders come as pushes from the computer, so it needs to be on and awake. Settings → Your Mac → iPhone and other devices → <strong>Keep this computer awake on power</strong> does that (on by default from setup).</p>
-
-<h3>No computer?</h3>
-<p>The iPhone app also works on its own over a folder in iCloud Drive: open Gubernos → <strong>Or use the phone on its own</strong> → <strong>Start a new system</strong>. You get tasks, habits, reminders, widgets and the watch. Agents, the chat, voice and planning with your calendar need Gubernos on a computer.</p>
-<p>Gubernos is in beta and changes quickly. Your files stay yours whatever happens: plain Markdown in your own folder.</p>
-<p><strong>Feedback:</strong> in the app, menu ☰ → <strong>Report bug / idea</strong> (with the Mac; answers come back to you there), or in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>
-</section>
-</div>
 
 <!-- concept:start (scripts/build-concept.mjs) -->
 <section class="concept wide">
@@ -182,6 +119,83 @@
 </div>
 </section>
 <!-- concept:end -->
+
+<section class="features">
+<h2>What it does</h2>
+<ul>
+<li><strong>Capture anything:</strong> type, dictate, share from any app, or speak to your Apple Watch. The inbox agent says what each item is.</li>
+<li><strong>Plan the day</strong> around your calendar, with the one thing that matters most first.</li>
+<li><strong>Hand tasks to agents:</strong> research, drafts, follow-ups. They report back for your review.</li>
+<li><strong>Habits and protocols</strong> for your mornings and evenings, ticked off from Apple Health where it can.</li>
+<li><strong>Weekly review</strong> and a model of what you’re responsible for, committed to and want.</li>
+<li><strong>Bring your tasks:</strong> import from Todoist, Things, Apple Reminders or any app’s export file (Settings → General → Import tasks).</li>
+</ul>
+</section>
+
+<section class="install">
+<h2 id="install">Install the beta</h2>
+<p>Gubernos runs on your computer, and your phone connects to it.</p>
+<ol class="steps">
+<li><b>An AI subscription</b><span>Claude with Claude Code (Pro or higher), or any ChatGPT plan. The first talk, the chat and the agents run on it. <a href="https://claude.com/pricing">Claude plans</a> · <a href="https://chatgpt.com/pricing">ChatGPT plans</a></span></li>
+<li><b>Gubernos on a computer</b><span>A Mac, Windows or Linux. It’s the server: your files, the agents and the calendar live there.</span></li>
+<li><b>The app on your phone</b><span>iPhone and Apple Watch, or Android. It reaches your computer from anywhere, while the computer is on.</span></li>
+</ol>
+
+<h3>Your computer</h3>
+<div class="opts">
+<div class="opt" id="mac">
+<h4>Mac</h4>
+<p class="download"><a class="get" href="https://github.com/old-bozman/gubernos/releases/latest/download/Gubernos.dmg">Download for Mac</a></p>
+<p>macOS 13 or later, Apple silicon or Intel. Open it and double-click Gubernos. No Terminal.</p>
+<details>
+<summary>Or let your agent install it</summary>
+<p>Open Claude Code or Codex (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>) and paste:</p>
+<div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
+<p>It installs the app, creates your folder, connects your phone and interviews you. Or in Terminal, with the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>:</p>
+<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre><button type="button" hidden>Copy</button></div>
+</details>
+</div>
+<div class="opt" id="windows">
+<h4>Windows</h4>
+<p>In PowerShell (Start → type PowerShell), paste:</p>
+<div class="copy"><pre><code>irm https://gubernos.app/install.ps1 | iex</code></pre><button type="button" hidden>Copy</button></div>
+<p>It installs WSL (Windows’ own Linux) with Ubuntu if needed. Allow it as administrator, restart, choose a Linux user name and password in the Ubuntu window, then run the same line again.</p>
+</div>
+<div class="opt" id="linux">
+<h4>Linux</h4>
+<p>In a terminal, run:</p>
+<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash -s -- --wizard</code></pre><button type="button" hidden>Copy</button></div>
+<p>Needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. On a machine without a screen it prints the link. <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">Install guide</a></p>
+</div>
+</div>
+<p class="muted">Every way ends on the same setup page in your browser: your name, where your files live, and signing in to Claude or ChatGPT.</p>
+
+<h3>Your phone</h3>
+<div class="opts two">
+<div class="opt" id="iphone">
+<h4>iPhone and Apple Watch</h4>
+<p class="muted">The app, in beta through TestFlight. Keeps a copy of your files, so it works offline too.</p>
+<ol>
+<li>Install <strong>TestFlight</strong> from the App Store.</li>
+<li>On the iPhone, open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> → <strong>Accept</strong> → <strong>Install</strong>.</li>
+<li>On the computer, in Gubernos: Settings → Your Mac → iPhone and other devices → <strong>Connect your iPhone</strong>, and scan the code with the iPhone’s camera.</li>
+</ol>
+</div>
+<div class="opt" id="android">
+<h4>Android</h4>
+<p class="muted">A web app from Chrome, with notifications. Works live from your computer: no offline copy, widgets or Health.</p>
+<ol>
+<li>On the computer, in Gubernos: Settings → Your Mac → iPhone and other devices → <strong>Android or a browser</strong>. It gets an https address in about a minute.</li>
+<li>Scan the code marked <strong>Android</strong> and open it in <strong>Chrome</strong>, or <strong>Copy link</strong> and send it to the phone.</li>
+<li>Chrome menu <strong>⋮</strong> → <strong>Install app</strong>.</li>
+<li>In Gubernos on the phone: Settings → This device → Notifications <strong>On</strong>.</li>
+</ol>
+</div>
+</div>
+<p class="muted">The phone reaches your computer through Cloudflare, and only paired devices get in (<a href="privacy.html#phone">what that means</a>). Keep the computer awake: <strong>Keep this computer awake on power</strong>, in the same settings, is on by default.</p>
+<p class="muted"><strong>No computer?</strong> The iPhone app also works on its own over a folder in iCloud Drive: open Gubernos → <strong>Or use the phone on its own</strong>. You get tasks, habits, reminders, widgets and the watch; agents, the chat, voice and calendar planning need the computer.</p>
+<p class="muted"><strong>Feedback:</strong> in the app, menu ☰ → <strong>Report bug / idea</strong>, or in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>
+</section>
 
 <footer>Gubernos · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="mailto:me@alexandersafonov.com">me@alexandersafonov.com</a><br>The method is inspired by David Allen’s Getting Things Done®, Gabriele Oettingen’s WOOP and Brian Johnson’s <a href="https://www.heroic.us">Heroic</a>; Gubernos is not affiliated with any of them.</footer>
 </main>

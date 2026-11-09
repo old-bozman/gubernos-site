@@ -6,9 +6,9 @@
 <title>Gubernos</title>
 <meta name="description" content="A personal operating system: tasks, projects, goals, habits and your day, with AI agents that take part of the work. Your files, on your own Mac.">
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 <script src="copy.js" defer></script>
-<link rel="stylesheet" href="concept.css">
+<link rel="stylesheet" href="concept.css?v=2">
 </head>
 <body>
 <main>
@@ -141,19 +141,20 @@
 <li><b>The app on your phone</b><span>iPhone and Apple Watch, or Android. It reaches your computer from anywhere, while the computer is on.</span></li>
 </ol>
 
-<h3>Your computer</h3>
+<div class="agent-way">
+<h3>The easiest way: let your AI agent install it</h3>
+<p>On your computer, open Claude Code or Codex, whichever your plan covers (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>), and paste:</p>
+<div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
+<p>It installs Gubernos, creates your folder, connects your phone and interviews you to fill the system. You only click Allow where it asks and scan a code with your phone. On a Mac or Linux; on Windows, run the agent inside WSL (Ubuntu), or use the PowerShell line below.</p>
+</div>
+
+<h3>Or install it yourself</h3>
 <div class="opts">
 <div class="opt" id="mac">
 <h4>Mac</h4>
 <p class="download"><a class="get" href="https://github.com/old-bozman/gubernos/releases/latest/download/Gubernos.dmg">Download for Mac</a></p>
 <p>macOS 13 or later, Apple silicon or Intel. Open it and double-click Gubernos. No Terminal.</p>
-<details>
-<summary>Or let your agent install it</summary>
-<p>Open Claude Code or Codex (<a href="https://github.com/old-bozman/gubernos/blob/main/SETUP.md">how to get one</a>) and paste:</p>
-<div class="copy"><pre><code>Install Gubernos for me: read https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md and do the part "For the agent".</code></pre><button type="button" hidden>Copy</button></div>
-<p>It installs the app, creates your folder, connects your phone and interviews you. Or in Terminal, with the <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>:</p>
-<div class="copy"><pre><code>curl -fsSL https://raw.githubusercontent.com/old-bozman/gubernos/main/install.sh | bash</code></pre><button type="button" hidden>Copy</button></div>
-</details>
+<p class="muted">Or in Terminal: <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md">install guide</a>.</p>
 </div>
 <div class="opt" id="windows">
 <h4>Windows</h4>
@@ -168,7 +169,7 @@
 <p>Needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. On a machine without a screen it prints the link. <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">Install guide</a></p>
 </div>
 </div>
-<p class="muted">Every way ends on the same setup page in your browser: your name, where your files live, and signing in to Claude or ChatGPT.</p>
+<p class="muted">Each of these ends on the same setup page in your browser: your name, where your files live, and signing in to Claude or ChatGPT.</p>
 
 <h3>Your phone</h3>
 <div class="opts two">

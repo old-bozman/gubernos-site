@@ -24,7 +24,7 @@
 <header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
 
 <h1>Privacy policy</h1>
-<p class="muted">Effective 8 November 2026 · applies to the Gubernos app for iPhone and Apple Watch, to Gubernos for Mac, Linux and Windows (WSL), and to Gubernos installed from a browser, such as on Android</p>
+<p class="muted">Effective 10 November 2026 · applies to the Gubernos app for iPhone and Apple Watch, to Gubernos for Mac, Linux and Windows (WSL), and to Gubernos installed from a browser, such as on Android</p>
 <p class="muted">Where this policy says Mac, the same goes for a Linux or Windows computer running Gubernos. Where it says iPhone, it also means an Android phone or another browser you pair, unless it says otherwise.</p>
 
 <div class="card">
@@ -70,22 +70,27 @@
 <p>These are optional and run on your Mac, under your own accounts and their own privacy policies. Gubernos only passes your data to them when you use the feature.</p>
 <ul>
 <li><strong>An AI model</strong> (Claude Code by Anthropic or Codex by OpenAI), on your own subscription. When the app triages your inbox, answers in the chat, reads a voice note or runs an agent on a task, the relevant notes go to that provider. Check that provider’s terms and privacy settings: depending on them, it may use your prompts to improve its models, whatever the plan.</li>
-<li><strong>Google Calendar, Gmail, Contacts, Drive</strong>, if you sign in on your Mac: see <a href="#google">Google</a>.</li>
+<li><strong>Google Calendar</strong>, if you sign in on your Mac, and Gmail, Contacts and Drive if you also set up your own Google client: see <a href="#google">Google</a>.</li>
 <li><strong>Oura</strong>, if you add your own token on the Mac, for sleep habits.</li>
 </ul>
 
 <h2 id="google">Google</h2>
-<p>Connecting Google is optional: on your Mac, Settings → Your Mac → Google → <strong>Sign in with Google</strong>. You can untick what you don’t want. Google hasn’t verified Gubernos yet, so it first warns that it “hasn’t verified this app” (Advanced → Go to Gubernos), and at most 100 people can sign in until it does.</p>
+<p>Connecting Google is optional: on your Mac, Settings → Your Mac → Google → <strong>Sign in with Google</strong>. Gubernos’ sign-in asks for your <strong>calendar only</strong>. Google hasn’t verified Gubernos yet, so it first warns that it “hasn’t verified this app” (Advanced → Go to Gubernos), and at most 100 people can sign in until it does.</p>
 <table>
 <tr><th>Access</th><th>What it is for</th></tr>
-<tr><td>Calendar: events, free/busy, calendar list</td><td><em>Plan the day</em> sees your meetings and free time. Time blocks become events when you apply a plan.</td></tr>
+<tr><td>Calendar: events, free/busy, calendar list</td><td><em>Plan the day</em> sees your meetings and free time, and shows them to you. Time blocks become events when you apply a plan, and are deleted when you remove them.</td></tr>
+</table>
+<p><strong>Gmail, Contacts and Drive</strong> aren’t requested by Gubernos’ sign-in. If you set up your own Google client (<a href="https://github.com/old-bozman/gubernos/blob/main/docs/google.md">the Google guide</a>), you can add them under that client:</p>
+<table>
+<tr><th>Access</th><th>What it is for</th></tr>
 <tr><td>Gmail: read and compose</td><td>Agents read mail a task depends on. The app drafts replies, and sends one only when you confirm it.</td></tr>
 <tr><td>Contacts: read, including people you’ve emailed</td><td>Agents look up an address or who someone is.</td></tr>
 <tr><td>Drive: read</td><td>Agents read a document a task refers to.</td></tr>
 </table>
 <p>Agents get read-only tools. Your Google sign-in is kept on your Mac, in <code>~/.config/gubernos</code>, and the data goes directly between your Mac and Google. It goes further only in these ways:</p>
 <ul>
-<li><strong>The AI model you chose.</strong> When an agent reads mail or a document, the text goes to that provider under your plan. If your provider’s settings let it use prompts to improve its models, that can include this text, so we suggest turning that off before you connect Google.</li>
+<li><strong>Not your calendar to the AI model.</strong> Event titles and times are not sent to the AI model: <em>Plan the day</em> gives it only the number of free hours today.</li>
+<li><strong>The AI model you chose.</strong> With your own Google client, when an agent reads mail or a document, the text goes to that provider under your plan. If your provider’s settings let it use prompts to improve its models, that can include this text, so we suggest turning that off before you connect Google.</li>
 <li><strong>Your folder.</strong> What you or an agent save into a task stays in your folder, the Mac’s daily copies and the iPhone’s copy.</li>
 <li><strong>Your iPhone.</strong> When you see this data on the phone, it travels over <a href="#phone">your iPhone’s connection to your Mac</a>.</li>
 <li><strong>Notifications.</strong> An agent’s last message can quote it, and goes through <a href="#pushes">the relay</a>.</li>

@@ -24,7 +24,7 @@
 <header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
 
 <h1>Privacy policy</h1>
-<p class="muted">Effective 10 November 2026 · applies to the Gubernos app for iPhone and Apple Watch, to Gubernos for Mac, Linux and Windows (WSL), and to Gubernos installed from a browser, such as on Android</p>
+<p class="muted">Effective 14 November 2026 · applies to the Gubernos app for iPhone and Apple Watch, to Gubernos for Mac, Linux and Windows (WSL), and to Gubernos installed from a browser, such as on Android</p>
 <p class="muted">Where this policy says Mac, the same goes for a Linux or Windows computer running Gubernos. Where it says iPhone, it also means an Android phone or another browser you pair, unless it says otherwise.</p>
 
 <div class="card">
@@ -98,7 +98,21 @@
 <li><strong>A report you send.</strong> With <em>Send screenshots</em> ticked, a copy of the screen can show it, and we read that report: see <a href="#reports">Bug reports and ideas</a>.</li>
 </ul>
 <p>We don’t sell this data, don’t use it for advertising and don’t use it to train AI models. Gubernos’s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<p>How this data is protected: see <a href="#security">How we protect your data</a>.</p>
 <p><strong>To remove access:</strong> in Gubernos, Settings → Your Mac → Google → <strong>Disconnect</strong>. It revokes access at Google and deletes the sign-in from your Mac. If your Mac is offline, Google doesn’t get that message, so check <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. What is already saved in your folder stays until you delete it.</p>
+
+<h2 id="security">How we protect your data</h2>
+<p>This covers your files and everything Gubernos gets from Google, including sensitive data such as your calendar.</p>
+<ul>
+<li><strong>Kept on your devices, not ours.</strong> We run no server that stores your files or your Google data. Gubernos keeps them on your Mac and, if you connect one, on your iPhone. Your Mac’s account password and, if you turn it on, FileVault disk encryption protect them there. On the iPhone, the app’s storage is encrypted by iOS while the phone has a passcode.</li>
+<li><strong>Encrypted in transit.</strong> Your Mac talks to Google, to our relay and to Cloudflare only over HTTPS (TLS). Your iPhone reaches your Mac over HTTPS too. With the default Cloudflare address, that encryption ends at Cloudflare, as described in <a href="#phone">Your iPhone’s connection to your Mac</a>. With Tailscale it ends on your Mac.</li>
+<li><strong>Google sign-in.</strong> You sign in on Google’s own page with OAuth 2.0, using PKCE and a one-time state check, so Gubernos never sees your Google password. It asks only for the calendar access it uses. The sign-in token is stored on your Mac in <code>~/.config/gubernos</code>, in a file only your Mac user account can read. It is never sent to us or to the AI model.</li>
+<li><strong>Only your devices get in.</strong> Gubernos on your Mac listens only on the Mac itself. Another device reaches it only through the address you set up, and only with a pairing token: 24 random bytes, shown once as a QR code or link in your Mac’s Settings. Requests without it are refused. Making a new token unpairs every device.</li>
+<li><strong>Limited agent access.</strong> Agents get read-only Google tools. With your own Google client, the app sends an email only after you confirm it.</li>
+<li><strong>Nothing kept in transit through us.</strong> The relay passes notifications through without storing them. It keeps only a short-lived code and a count of addresses made each day. Bug reports are kept in a private repository. Only the developer has access to the relay, the Cloudflare account and that repository.</li>
+<li><strong>Removing access.</strong> <em>Disconnect</em> revokes Gubernos’ access at Google and deletes the token from your Mac. Deleting your folder and the backups removes the rest.</li>
+</ul>
+<p>To report a security problem, write to <a href="mailto:hello@gubernos.app">hello@gubernos.app</a>.</p>
 
 <h2 id="reports">Bug reports and ideas</h2>
 <p>When you send a bug report or an idea from the app, your Mac sends it through relay.gubernos.app, a small service we run on Cloudflare. The relay opens an issue in our <strong>private</strong> GitHub repository. You don’t need a GitHub account, and the report isn’t public.</p>

@@ -24,7 +24,7 @@
 <header><img src="icon.png" alt=""><a href="./">Gubernos</a></header>
 
 <h1>Privacy policy</h1>
-<p class="muted">Effective 14 November 2026 · applies to the Gubernos app for iPhone and Apple Watch, to Gubernos for Mac, Linux and Windows (WSL), and to Gubernos installed from a browser, such as on Android</p>
+<p class="muted">Effective 18 November 2026 · applies to the Gubernos app for iPhone and Apple Watch, to Gubernos for Mac, Linux and Windows (WSL), and to Gubernos installed from a browser, such as on Android</p>
 <p class="muted">Where this policy says Mac, the same goes for a Linux or Windows computer running Gubernos. Where it says iPhone, it also means an Android phone or another browser you pair, unless it says otherwise.</p>
 
 <div class="card">
@@ -70,7 +70,7 @@
 <h2>Services you connect yourself</h2>
 <p>These are optional and run on your Mac, under your own accounts and their own privacy policies. Gubernos only passes your data to them when you use the feature.</p>
 <ul>
-<li><strong>An AI model</strong> (Claude Code by Anthropic or Codex by OpenAI), on your own subscription. When the app triages your inbox, answers in the chat, reads a voice note or runs an agent on a task, the relevant notes go to that provider. Check that provider’s terms and privacy settings: depending on them, it may use your prompts to improve its models, whatever the plan.</li>
+<li><strong>An AI model</strong> (Claude Code by Anthropic or Codex by OpenAI) on your own subscription, or Claude through the Anthropic API on your own API key. The key is kept in your Mac’s Keychain (on Linux, in a file only your user can read) and, if you add one on the iPhone, in the iPhone’s Keychain; it is never sent to us. With a key on the iPhone, the phone sends requests to Anthropic itself when your Mac isn’t reachable. When the app triages your inbox, answers in the chat, reads a voice note or runs an agent on a task, the relevant notes go to that provider. Check that provider’s terms and privacy settings: depending on them, it may use your prompts to improve its models, whatever the plan.</li>
 <li><strong>Google Calendar</strong>, if you sign in on your Mac, and Gmail, Contacts and Drive if you also set up your own Google client: see <a href="#google">Google</a>.</li>
 <li><strong>Oura</strong>, if you add your own token on the Mac, for sleep habits.</li>
 </ul>
@@ -108,6 +108,7 @@
 <li><strong>Encrypted in transit.</strong> Your Mac talks to Google, to our relay and to Cloudflare only over HTTPS (TLS). Your iPhone reaches your Mac over HTTPS too. With the default Cloudflare address, that encryption ends at Cloudflare, as described in <a href="#phone">Your iPhone’s connection to your Mac</a>. With Tailscale it ends on your Mac.</li>
 <li><strong>Google sign-in.</strong> You sign in on Google’s own page with OAuth 2.0, using PKCE and a one-time state check, so Gubernos never sees your Google password. It asks only for the calendar access it uses. The sign-in token is stored on your Mac in <code>~/.config/gubernos</code>, in a file only your Mac user account can read. It is never sent to us or to the AI model.</li>
 <li><strong>Only your devices get in.</strong> Gubernos on your Mac listens only on the Mac itself. Another device reaches it only through the address you set up, and only with a pairing token: 24 random bytes, shown once as a QR code or link in your Mac’s Settings. Requests without it are refused. Making a new token unpairs every device.</li>
+<li><strong>Your AI key.</strong> An API key you add is checked with the provider, then kept in the Keychain (or a file only your user can read). A key for your Mac can be added only on the Mac itself, so it never passes through the phone’s connection; a key for the iPhone stays on the iPhone. Neither is ever sent to us.</li>
 <li><strong>Limited agent access.</strong> Agents get read-only Google tools. With your own Google client, the app sends an email only after you confirm it.</li>
 <li><strong>Nothing kept in transit through us.</strong> The relay passes notifications through without storing them. It keeps only a short-lived code and a count of addresses made each day. Bug reports are kept in a private repository. Only the developer has access to the relay, the Cloudflare account and that repository.</li>
 <li><strong>Removing access.</strong> <em>Disconnect</em> revokes Gubernos’ access at Google and deletes the token from your Mac. Deleting your folder and the backups removes the rest.</li>

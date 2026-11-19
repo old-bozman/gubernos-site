@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="Gubernos: Steer your life, not your to-do app. The Today and Protocol screens on an iPhone.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <script src="copy.js" defer></script>
 <link rel="stylesheet" href="concept.css?v=2">
 </head>
@@ -29,11 +29,11 @@
 <div>
 <h1>Gubernos</h1>
 <p class="tagline">Steer your life, not your to&#8209;do app.</p>
-<p class="app-get"><a class="get" href="#install">Install Gubernos</a><span>Runs on <a href="#mac">Mac</a>, <a href="#windows">Windows</a> or <a href="#linux">Linux</a> · with <a href="#iphone">iPhone</a>, Apple Watch and <a href="#android">Android</a></span></p>
+<p class="app-get"><a class="get" href="#install">Install Gubernos</a><span>On <a href="#iphone-only">an iPhone alone</a>, or with <a href="#mac">Mac</a>, <a href="#windows">Windows</a> or <a href="#linux">Linux</a> as the server · Apple Watch and <a href="#android">Android</a> too</span></p>
 </div>
 </header>
 
-<p class="lead">A personal operating system (from Latin <em>gubernare</em>, to steer): tasks, projects, goals, habits and your day, with AI agents that take part of the work off your hands. Your files stay on your own computer.</p>
+<p class="lead">A personal operating system (from Latin <em>gubernare</em>, to steer): tasks, projects, goals, habits and your day, with AI agents that take part of the work off your hands. Your files stay yours: plain Markdown on your own computer or in your iCloud.</p>
 <p class="beta">The current version is a <strong>beta</strong>: things change quickly, and your files stay yours whatever happens.</p>
 
 <figure class="demo">
@@ -146,7 +146,27 @@
 
 <section class="install">
 <h2 id="install">Install Gubernos</h2>
-<p>Gubernos runs on your computer, and your phone connects to it.</p>
+<p>Two ways. Start on your iPhone alone, in a few minutes and with no server. Or run Gubernos on your computer as the server, for everything, agents included. You can add the computer later.</p>
+<div class="opts two ways">
+<div class="opt" id="iphone-only">
+<h4>Just an iPhone</h4>
+<p class="muted">No server, no subscription. Your files live in your iCloud Drive.</p>
+<ol>
+<li>Install <strong>TestFlight</strong> from the App Store, then open <a href="https://testflight.apple.com/join/rBUGmgJG"><strong>testflight.apple.com/join/rBUGmgJG</strong></a> on the iPhone → <strong>Accept</strong> → <strong>Install</strong>.</li>
+<li>Open Gubernos → <strong>Start on this iPhone</strong> → in the picker, iCloud Drive → <strong>New Folder</strong>.</li>
+<li>Choose its AI: a <strong>free Google Gemini key</strong> (no card, about 2 minutes, the app shows how), your own Anthropic or OpenAI key, or none for now.</li>
+</ol>
+<p>You get tasks, the inbox with suggestions, the chat, voice into tasks, habits with Apple Health, <em>Plan the day</em>, widgets and the Apple Watch. Agents, your calendar and the morning brief need the computer.</p>
+</div>
+<div class="opt" id="with-computer">
+<h4>With your computer as the server</h4>
+<p class="muted">The full Gubernos. A Mac, Windows or Linux that stays on.</p>
+<p>Runs on your Claude or ChatGPT subscription, or an API key. Adds agents that do tasks for you, your calendar in <em>Plan the day</em> and the morning brief. Your iPhone, Apple Watch or Android connects to it from anywhere.</p>
+<p><a href="#computer">Set it up ↓</a></p>
+</div>
+</div>
+
+<h3 id="computer">With your computer as the server</h3>
 <ol class="steps">
 <li><b>An AI model</b><span>Claude with Claude Code (Pro or higher), any ChatGPT plan, or your own API key: a free Google Gemini key, or Anthropic or OpenAI, paid per use. The first talk, the chat and the agents run on it. <a href="https://claude.com/pricing">Claude plans</a> · <a href="https://chatgpt.com/pricing">ChatGPT plans</a> · API keys: <a href="https://aistudio.google.com/apikey">Google Gemini (free)</a> · <a href="https://console.anthropic.com/settings/keys">Anthropic</a> · <a href="https://platform.openai.com/api-keys">OpenAI</a></span></li>
 <li><b>Gubernos on a computer</b><span>A Mac, Windows or Linux. It’s the server: your files, the agents and the calendar live there.</span></li>
@@ -181,9 +201,9 @@
 <p>Needs <code>curl</code>, <code>tar</code> and <code>rsync</code>. On a machine without a screen it prints the link. <a href="https://github.com/old-bozman/gubernos/blob/main/docs/install.md#linux-or-windows-in-wsl">Install guide</a></p>
 </div>
 </div>
-<p class="muted">Each of these ends on the same setup page in your browser: your name, where your files live, and signing in to Claude or ChatGPT.</p>
+<p class="muted">Each of these ends on the same setup page in your browser: your name, where your files live, and signing in to Claude or ChatGPT, or pasting an API key.</p>
 
-<h3>Your phone</h3>
+<h3>Your phone, connected to the computer</h3>
 <div class="opts two">
 <div class="opt" id="iphone">
 <h4>iPhone and Apple Watch</h4>
@@ -206,7 +226,6 @@
 </div>
 </div>
 <p class="muted">The phone reaches your computer through Cloudflare, and only paired devices get in (<a href="privacy.html#phone">what that means</a>). Keep the computer awake: <strong>Keep this computer awake on power</strong>, in the same settings, is on by default.</p>
-<p class="muted"><strong>No computer?</strong> The iPhone app also works on its own over a folder in iCloud Drive: open Gubernos → <strong>Or use the phone on its own</strong>. You get tasks, habits, reminders, widgets and the watch; agents, the chat, voice and calendar planning need the computer.</p>
 <p class="muted"><strong>Feedback:</strong> in the app, menu ☰ → <strong>Report bug / idea</strong>, or in TestFlight take a screenshot → <strong>Share Beta Feedback</strong>, or <a href="https://github.com/old-bozman/gubernos/issues">open an issue on GitHub</a>. More help: <a href="support.html">Support</a>.</p>
 </section>
 

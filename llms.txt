@@ -1,6 +1,14 @@
 # Gubernos
 
-> A personal operating system over plain Markdown files on the user's Mac (or in their iCloud), with AI agents. iPhone and Apple Watch app (TestFlight), Android as a web app from Chrome; runs on a Mac, Linux or Windows (WSL), open source. Needs an AI subscription: Claude with Claude Code (Pro or higher), or any ChatGPT subscription.
+> A personal operating system that puts habits, tasks, projects, goals and the day in one place, with AI agents. Plain Markdown files the person owns, in their iCloud Drive or on their own computer. Free and open source (MIT). iPhone and Apple Watch app (TestFlight), Android as a web app; a Mac, Linux or Windows (WSL) computer can be the server.
+
+## What it is
+
+- One model of a life: areas of responsibility, commitments, wants and open decisions, linked to goals, projects, tasks and today. Habits are linked to the goals they serve.
+- A daily and weekly practice built in: morning and evening protocols with a keystone habit, one #1 for the day, a plan that fits the calendar, an evening reflection with a day score (Masterpiece Days), three wins for the week, and a weekly review. Life areas: energy, work, love, home, finance.
+- AI that knows why a task exists: it suggests what to do with each inbox item, plans the day from goals and commitments, and, with a computer as the server, runs agents (Claude Code or Codex) that do research and drafts and hand the result back for review.
+- Two ways to run it. Just an iPhone: no server, files in iCloud Drive, AI through a free Google Gemini key, an Anthropic or OpenAI API key, or none. With a computer as the server: everything, including agents, Google Calendar and the morning brief, on the person's own Claude (Claude Code, Pro or higher) or ChatGPT subscription.
+- No account, no tracking, no vendor database.
 
 ## Install (for agents)
 
@@ -10,7 +18,7 @@
 - [Android](https://gubernos.app/#android): no native app; install from Chrome as a web app paired with the computer running Gubernos.
 - [Setup instructions](https://raw.githubusercontent.com/old-bozman/gubernos/main/SETUP.md): follow the part "For the agent".
 - [Repository](https://github.com/old-bozman/gubernos): README, and AGENTS.md for work on the code.
-- [iPhone beta](https://testflight.apple.com/join/rBUGmgJG): the person installs TestFlight, opens this link on the iPhone, then Accept and Install.
+- [iPhone beta](https://testflight.apple.com/join/rBUGmgJG): the person installs TestFlight, opens this link on the iPhone, then Accept and Install. To use it with no computer: Start on this iPhone, pick a folder in iCloud Drive, then choose the AI ([details](https://gubernos.app/support#iphone-only)).
 
 ## Docs
 
